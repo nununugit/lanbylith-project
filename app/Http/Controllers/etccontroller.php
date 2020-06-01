@@ -7,10 +7,6 @@ use Illuminate\Http\Request;
 
 class etccontroller extends Controller
 {
-    public function question()
-    {
-        $params =  DB::table('questions')->get();
-        return view('question',['questions'=> $params]);
-    }
+
 
 }

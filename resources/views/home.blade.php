@@ -1,4 +1,5 @@
-@extends('layouts.navbar')
+
+@extends('navs.navbar_home')
 
 @section('content')
 <link href="{{ asset('css/app3.css') }}" rel="stylesheet">

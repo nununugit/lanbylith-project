@@ -82,10 +82,22 @@
                 </div>
             </div>
         </nav>
+        <div class='navbar2nd'>
 
+            <link href="{{ asset('css/app2.css') }}" rel="stylesheet">
+            <nav class="navbar-nav mr-auto">
+            <ul>
+            <li><a href="{{ url('/home') }}">Home</a></li>
+            <li  class="current"><a href="{{ url('/questions') }}">Question</a></li>
+            <li><a href="{{ url('/rank') }}">Rank</a></li>
+            <li><a href={{ url('/mail') }}>Mail</a></li>
+            </ul>
+            </nav>
+        </div>
         <main class="py-4">
             @yield('content')
         </main>
     </div>
 </body>
 </html>
+

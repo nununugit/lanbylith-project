@@ -6,6 +6,7 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link href="{{ asset('css/app2.css') }}" rel="stylesheet">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -32,13 +33,9 @@
                     ->join('groups', 'users.group_gid' , '=' , 'groups.gid')
                     ->select('users.name','groups.gname')
                     ->where('users.name','=', Auth::user()->name )
-                    ->get();
+                    ->first();
 @endphp
-
-@foreach ($items as $item)
-{{ $item -> gname}}
-@endforeach
-
+    teamname : {{ $items -> gname}}
             </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -85,21 +82,22 @@
                 </div>
             </div>
         </nav>
-<div class='navbar2nd'>
+        <div class='navbar2nd'>
 
-    <link href="{{ asset('css/app2.css') }}" rel="stylesheet">
-    <nav>
-    <ul>
-    <li class="current"><a href="{{ url('/home') }}">Home</a></li>
-    <li><a href="{{ url('/questions') }}">Question</a></li>
-    <li><a href=”#”>Rank</a></li>
-    <li><a href=”#”>Mail</a></li>
-    </ul>
-    </nav>
-</div>
+            <link href="{{ asset('css/app2.css') }}" rel="stylesheet">
+            <nav class="navbar-nav mr-auto">
+            <ul>
+            <li class="current"><a href="{{ url('/home') }}">Home</a></li>
+            <li><a href="{{ url('/questions') }}">Question</a></li>
+            <li><a href="{{ url('/rank') }}">Rank</a></li>
+            <li><a href={{ url('/mail') }}>Mail</a></li>
+            </ul>
+            </nav>
+        </div>
         <main class="py-4">
             @yield('content')
         </main>
     </div>
 </body>
 </html>
+

@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
+// Authの設定
 Route::get('members/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('members/login', 'Auth\LoginController@login');
 Route::post('members/logout', 'Auth\LoginController@logout')->name('logout');
@@ -29,7 +29,9 @@ Route::post('members/password/email', 'Auth\ForgotPasswordController@sendResetLi
 Route::get('members/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('members/password/reset', 'Auth\ResetPasswordController@reset');
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/questions', 'etcController@question');
 
-Route::get('/group', 'etccontroller@groupsend');
+//自分のコントローラ
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/questions', 'questionController@question');
+Route::post('/questions/api', 'answerController@answer');
+
