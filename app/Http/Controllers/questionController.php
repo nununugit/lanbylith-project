@@ -9,7 +9,9 @@ class questionController extends Controller
 {
     public function question()
     {
+        $msg = '';
         $params =  DB::table('questions')->get();
-        return view('question',['questions'=> $params]);
+
+        return view('question',['questions'=> $params ,'message' => $msg]);
     }
 }

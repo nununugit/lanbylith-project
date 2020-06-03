@@ -3,6 +3,11 @@
 @section('content')
 <link href="{{ asset('css/app3.css') }}" rel="stylesheet">
 <div class="parent">
+    @if(!empty($message))
+    <script>
+        alert('{{ $message }}');
+      </script>
+    @endif
 
     <table>
         @foreach ($questions as $question)
@@ -11,7 +16,11 @@
           <th>{{ $question -> title }}</th>
           <th><input value="回答" name="{{  $question -> qid  }}" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{  $question -> qid  }}"></th>
         </tr>
+        @endforeach
+    </table>
     </div>
+
+    @foreach ($questions as $question)
     <!-- モーダルの設定 -->
     <div class="modal fade" id="exampleModal{{  $question -> qid  }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
         <div class="modal-dialog">
@@ -25,18 +34,30 @@
             <div class="modal-body">
               <p>{{ $question -> content }}</p>
             </div>
+            <form action="/questions" method="post">
             <div class="modal-footer">
-                <form method="GET" {{-- action="{{ route('questions/api') }}" --}} >
+                    @csrf
+                    <div class="form-group row">
+                        <input class="form-control" type="text" name="answer" >
+                    </div>
 
-                <input type="text">
-                <input class="btn btn-primary" type="button" name="{{ $question -> qid  }}" value="送信">
-                </form>
+                    <div class="form-group row">
+                        <input class="form-control" type="hidden" name ="qid" value="{{$question -> qid}}">
+                    </div>
+
+
+                    <div class = "form-group row">
+                        <input class="btn btn-primary " type="submit" class= "btn btn-primary" value="送信">
+                    </div>
+
+
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
             </div><!-- /.modal-footer -->
+        </form>
+
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
-
         @endforeach
-      </table>
+
 @endsection
