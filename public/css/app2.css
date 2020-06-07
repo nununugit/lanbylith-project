@@ -2,7 +2,6 @@
     position: relative;
     }
     .navbar2nd nav ul{
-    position: relative;
     left:10%;
     display: table;
     margin: 0 auto;
@@ -36,5 +35,4 @@
     .navbar2nd nav ul li:hover{
     border-top: 5px solid  #00B0F0;
     }
-
 
