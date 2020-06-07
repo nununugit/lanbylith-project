@@ -6,7 +6,6 @@
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link href="{{ asset('css/app2.css') }}" rel="stylesheet">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
@@ -29,13 +28,14 @@
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     @php
-                $items = DB::table('users')
+                $item = DB::table('users')
                     ->join('groups', 'users.group_gid' , '=' , 'groups.gid')
                     ->select('users.name','groups.gname')
                     ->where('users.name','=', Auth::user()->name )
                     ->first();
 @endphp
-    teamname : {{ $items -> gname}}
+    teamname : {{ $item -> gname}}
+
             </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>

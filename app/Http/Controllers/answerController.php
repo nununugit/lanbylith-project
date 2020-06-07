@@ -13,18 +13,23 @@ class answerController extends Controller
     {
         $qid = $request->qid;
         $answer = $request->answer;
-
+        $uid =Auth::user()->id;
         $params =  DB::table('questions')->get();
-
         if(DB::table('questions')->whereRaw('qid = ? and answer = ?', [$qid,$answer ])->exists()){
+            if(DB::table('ac')->whereRaw('id = ? and question_qid = ?', [ $uid ,$qid ])->exists()){
+                $msg = '既に解いた問題です';
+                 return view('question',['questions'=> $params ,'message' => $msg]);
+
+            }else{
             $param = [
-                'user_id' =>  Auth::user()->id ,
+                'user_id' =>  $uid ,
                 'question_qid' => $qid,
                 'ctime'=>Carbon::now()
             ];
             DB::table('ac')->insert($param);
         $msg = 'correct answer';
         return view('question',['questions'=> $params ,'message' => $msg]);
+            }
 
         }else{
         $msg = 'incorrect answer';
