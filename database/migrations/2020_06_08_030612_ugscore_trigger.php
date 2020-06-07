@@ -29,7 +29,7 @@ class UgscoreTrigger extends Migration
     select score into q_score from lv where lvid in(select lv_lvid from questions where qid= q_qid);
     select group_gid into g_id from users where id=u_id;
 
-    select uscore into latest from uscore where id=u_id order by utime desc limit 1;
+    select uscore into latest from uscore where user_id=u_id order by utime desc limit 1;
     set u_score = q_score+ifnull(latest,0);
     insert into uscore(user_id,uscore,utime) values(u_id,u_score,c_time);
 
