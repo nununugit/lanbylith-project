@@ -13,27 +13,38 @@ class answerController extends Controller
     {
         $qid = $request->qid;
         $answer = $request->answer;
-        $uid =Auth::user()->id;
+        $uid = Auth::user()->id;
+        $gid = Auth::user()->group_gid;
         $params =  DB::table('questions')->get();
-        if(DB::table('questions')->whereRaw('qid = ? and answer = ?', [$qid,$answer ])->exists()){
-            if(DB::table('ac')->whereRaw('id = ? and question_qid = ?', [ $uid ,$qid ])->exists()){
-                $msg = '既に解いた問題です';
-                 return view('question',['questions'=> $params ,'message' => $msg]);
+        $clearflag = DB::table('ac')->join('users','users.id', '=','ac.user_id')
+                    ->select('question_qid')
+                    ->where('group_gid','=',Auth::user()->group_gid)->get();
 
-            }else{
-            $param = [
-                'user_id' =>  $uid ,
-                'question_qid' => $qid,
-                'ctime'=>Carbon::now()
-            ];
-            DB::table('ac')->insert($param);
-        $msg = 'correct answer';
-        return view('question',['questions'=> $params ,'message' => $msg]);
-            }
-
+        if(DB::table('ac')->join('users','users.id', '=','ac.user_id')->select('ctime')->whereRaw('group_gid = ? and question_qid = ?', [ $gid ,$qid ])->exists()){
+            //無限に点数を入れられないために
+            $msg = '既に解いた問題です';
+            return view('question',['questions'=> $params ,'message' => $msg, 'clearflags' => $clearflag]);
         }else{
-        $msg = 'incorrect answer';
-        return view('question',['questions'=> $params ,'message' => $msg]);
+            if(DB::table('questions')->whereRaw('qid = ? and answer = ?', [$qid,$answer ])->exists()){
+            //正答のinsert
+                $param = [
+                   'user_id' =>  $uid ,
+                   'question_qid' => $qid,
+                   'ctime'=>Carbon::now()
+               ];
+               DB::table('ac')->insert($param);
+           $msg = 'correct answer';
+           $clearflag = DB::table('ac')->join('users','users.id', '=','ac.user_id')
+           ->select('question_qid')
+           ->where('group_gid','=',Auth::user()->group_gid)->get();
+
+           return view('question',['questions'=> $params ,'message' => $msg ,'clearflags' => $clearflag]);
+
+           }else{
+
+               $msg = 'incorrect answer';
+               return view('question',['questions'=> $params ,'message' => $msg, 'clearflags' => $clearflag]);
+           }
         }
     }
 }

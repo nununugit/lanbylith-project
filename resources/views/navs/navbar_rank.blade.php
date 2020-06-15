@@ -91,8 +91,8 @@
     <nav>
     <ul>
     <li><a href="{{ url('/home') }}">Home</a></li>
-    <li class="current"> <a href="{{ url('/questions') }}">Question</a></li>
-    <li><a href=”#”>Rank</a></li>
+    <li> <a href="{{ url('/question') }}">Question</a></li>
+    <li class="current"><a href="{{ url('/home') }}">Rank</a></li>
     <li><a href=”#”>Mail</a></li>
     </ul>
     </nav>

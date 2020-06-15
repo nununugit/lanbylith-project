@@ -88,7 +88,7 @@
             <nav class="navbar-nav mr-auto">
             <ul>
             <li><a href="{{ url('/home') }}">Home</a></li>
-            <li  class="current"><a href="{{ url('/questions') }}">Question</a></li>
+            <li  class="current"><a href="{{ url('/question') }}">Question</a></li>
             <li><a href="{{ url('/rank') }}">Rank</a></li>
             <li><a href={{ url('/mail') }}>Mail</a></li>
             </ul>

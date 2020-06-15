@@ -11,11 +11,28 @@
 
     <table>
         @foreach ($questions as $question)
+        @foreach ($clearflags as $clearflag)
+
+        @if($question->qid === $clearflag->question_qid)
+        <tr class="cleard">
+            <th>{{ $question -> qid  }}</th>
+            <th>{{ $question -> title }}</th>
+            <th>
+            <button class="btn btn-primary">cleard</button>
+            </th>
+        @php
+        break;
+        @endphp
+        </tr>
+        @elseif($loop->last)
         <tr>
             <th>{{ $question -> qid  }}</th>
           <th>{{ $question -> title }}</th>
           <th><input value="回答" name="{{  $question -> qid  }}" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{  $question -> qid  }}"></th>
         </tr>
+        @endif
+        @endforeach
+
         @endforeach
     </table>
     </div>
@@ -34,7 +51,7 @@
             <div class="modal-body">
               <p>{{ $question -> content }}</p>
             </div>
-            <form action="/questions" method="post">
+            <form action="/question" method="post">
             <div class="modal-footer">
                     @csrf
                     <div class="form-group row">

@@ -65,7 +65,7 @@
                             <label for="gid" class="col-md-4 col-form-label text-md-right">{{__('Team')}}</label>
 
                             <div class="col-md-6">
-                            <select name="gid" id="gid" required autocomplete="gid">
+                            <select name="gid" id="gid" required autocomplete="gid" size="3">
                                 @foreach ($items as $item)
                                 <option value="{{ $item->gid }}">{{ $item -> gname }}</option>
                                 @endforeach
