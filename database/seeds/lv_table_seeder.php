@@ -10,33 +10,30 @@ class lv_table_seeder extends Seeder
      *
      * @return void
      */
+
     public function run()
     {
 
+
         $param = [
             'lvname' => '簡単',
-            'score' => '50'
+            'score' => '1'
         ];
         DB::table('lv')->insert($param);
 
         $param = [
             'lvname' => '普通',
-            'score' => '100'
+            'score' => '2'
         ];
         DB::table('lv')->insert($param);
 
         $param = [
             'lvname' => '難しい',
-            'score' => '150'
+            'score' => '3'
         ];
         DB::table('lv')->insert($param);
 
 
-        $param = [
-            'lvname' => 'とても難しい',
-            'score' => '200'
-        ];
-        DB::table('lv')->insert($param);
 
     }
 }

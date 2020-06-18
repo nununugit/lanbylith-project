@@ -35,3 +35,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/question', 'questionController@question');
 Route::post('/question', 'answerController@answer');
 Route::get('/rank', 'rankController@rank');
+
+Route::get('/percent','percentController@percent');

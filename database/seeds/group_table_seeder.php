@@ -27,7 +27,25 @@ class group_table_seeder extends Seeder
             'gname' => 'Cteam'
         ];
         DB::table('groups')->insert($param);
+        $param = [
+            'gname' => 'Dteam'
+        ];
+        DB::table('groups')->insert($param);
 
+        $param = [
+            'gname' => 'Eteam'
+        ];
+        DB::table('groups')->insert($param);
+
+        $param = [
+            'gname' => 'Fteam'
+        ];
+        DB::table('groups')->insert($param);
+
+        $param = [
+            'gname' => 'Gteam'
+        ];
+        DB::table('groups')->insert($param);
 
     }
 }

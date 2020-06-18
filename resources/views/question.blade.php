@@ -10,6 +10,18 @@
     @endif
 
     <table>
+        @if(empty($clearflags))
+        @foreach($questions as $question)
+        <tr>
+            <th>{{ $question -> qid  }}</th>
+          <th>{{ $question -> title }}</th>
+          <th><input value="回答" name="{{  $question -> qid  }}" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{  $question -> qid  }}"></th>
+        </tr>
+        @endforeach
+        @endif
+
+        @unless(empty($clearflags))
+
         @foreach ($questions as $question)
         @foreach ($clearflags as $clearflag)
 
@@ -20,9 +32,7 @@
             <th>
             <button class="btn btn-primary">cleard</button>
             </th>
-        @php
-        break;
-        @endphp
+        @break
         </tr>
         @elseif($loop->last)
         <tr>
@@ -30,10 +40,12 @@
           <th>{{ $question -> title }}</th>
           <th><input value="回答" name="{{  $question -> qid  }}" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{  $question -> qid  }}"></th>
         </tr>
+
         @endif
         @endforeach
-
         @endforeach
+
+        @endunless
     </table>
     </div>
 

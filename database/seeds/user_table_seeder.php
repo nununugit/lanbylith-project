@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-
+use App\User;
 class user_table_seeder extends Seeder
 {
     /**
@@ -12,16 +12,12 @@ class user_table_seeder extends Seeder
      */
     public function run()
     {
-
-        $param = [
-            'name'=>'anuma',
-
-            'email'=>'a@a',
-            'password'=>'anuma',
-            'group_gid'=>'1'
-        ];
-
-        DB::table('users')->insert($param);
-
+        \App\User::create([
+            'name' => 'anuma7',
+            'email' => 'a@a',
+            'password' => bcrypt('password'),
+            'group_gid' => '1'
+        ]);
     }
+
 }

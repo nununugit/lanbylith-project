@@ -12,10 +12,17 @@ class questionController extends Controller
     {
         $msg = '';
         $params =  DB::table('questions')->get();
-
-        $clearflag = DB::table('ac')->join('users','users.id', '=','ac.user_id')
+        $clearflagcnt = DB::table('ac')->join('users','users.id', '=','ac.user_id')
                     ->select('question_qid')
-                    ->where('group_gid','=',Auth::user()->group_gid)->get();
+                    ->where('group_gid','=',Auth::user()->group_gid)->count();
+
+        if($clearflagcnt < 1){
+            $clearflag = '';
+        }else{
+        $clearflag = DB::table('ac')->join('users','users.id', '=','ac.user_id')
+        ->select('question_qid')
+        ->where('group_gid','=',Auth::user()->group_gid)->get();
+        }
 
         return view('question',['questions'=> $params ,'message' => $msg , 'clearflags' => $clearflag]);
     }
