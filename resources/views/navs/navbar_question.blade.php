@@ -33,10 +33,23 @@
                     ->select('users.name','groups.gname')
                     ->where('users.name','=', Auth::user()->name )
                     ->first();
-@endphp
-    teamname : {{ $item -> gname}}
-
+                    @endphp
+                {{ $item -> gname}}
             </a>
+
+            <div class='navbar2nd'>
+                <link href="{{ asset('css/app2.css') }}" rel="stylesheet">
+                <nav class="navbar-nav mr-auto">
+                <ul>
+                <li><a href="{{ url('/home') }}">Home</a></li>
+                <li  class="current"><a href="{{ url('/question') }}">Question</a></li>
+                <li><a href="{{ url('/rank') }}">Rank</a></li>
+                <li><a href={{ url('/mail') }}>Mail</a></li>
+                </ul>
+                </nav>
+            </div>
+
+
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -60,6 +73,8 @@
                                 </li>
                             @endif
                         @else
+
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -82,18 +97,6 @@
                 </div>
             </div>
         </nav>
-        <div class='navbar2nd'>
-
-            <link href="{{ asset('css/app2.css') }}" rel="stylesheet">
-            <nav class="navbar-nav mr-auto">
-            <ul>
-            <li><a href="{{ url('/home') }}">Home</a></li>
-            <li  class="current"><a href="{{ url('/question') }}">Question</a></li>
-            <li><a href="{{ url('/rank') }}">Rank</a></li>
-            <li><a href={{ url('/mail') }}>Mail</a></li>
-            </ul>
-            </nav>
-        </div>
         <main class="py-4">
             @yield('content')
         </main>

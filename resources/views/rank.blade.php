@@ -1,6 +1,4 @@
-
-@extends('navs.navbar_rank')
-
+@extends('layouts.navbar')
 @section('content')
 <link href="{{ asset('css/app6.css') }}" rel="stylesheet">
 <div class="container">

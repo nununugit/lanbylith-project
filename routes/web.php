@@ -35,5 +35,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/question', 'questionController@question');
 Route::post('/question', 'answerController@answer');
 Route::get('/rank', 'rankController@rank');
-
+// テスト用のコントローラ
 Route::get('/percent','percentController@percent');
+Route::get('/nav','percentController@navs');
+Route::get('/api/question','questionController@json');
+Route::get('/question2', 'questionController@question2');

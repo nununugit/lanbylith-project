@@ -28,14 +28,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $user = Auth::user()->name;
-
-        $items = DB::table('users')
-                    ->join('groups', 'users.group_gid' , '=' , 'groups.gid')
-                    ->select('users.name','groups.gname')
-                    ->where('users.name','=',$user)
-                    ->get();
-
-        return view('home', ['items' => $items] );
+        return view('home' );
     }
 }

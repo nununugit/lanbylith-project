@@ -8,6 +8,8 @@
     <title>Document</title>
 </head>
 <body>
+    @extends('navs.navbar_tate')
+
     <link href="{{ asset('css/app_percent.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app_percent.js') }}" defer></script>
     <div class="progress-pie-chart" data-percent="43">
@@ -20,5 +22,6 @@
           </div>
         </div>
       </div>
-</body>
+
+    </body>
 </html>
