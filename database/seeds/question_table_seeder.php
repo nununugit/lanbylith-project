@@ -12,8 +12,9 @@ class question_table_seeder extends Seeder
      */
     public function run()
     {
-    for ($i = 1; $i <= 20; $i++) {
-        for($lv = 1 ;$lv <=3 ;$lv++){
+
+    for($lv = 1 ;$lv <=3 ;$lv++){
+        for ($i = 1; $i <= 20; $i++) {
             DB::table('questions')->insert([
                 'title'=>'テスト問題'. $lv.'_'.$i ,
                 'lv_lvid'=> $lv,

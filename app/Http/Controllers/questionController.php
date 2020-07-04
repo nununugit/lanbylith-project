@@ -34,7 +34,10 @@ class questionController extends Controller
         return $params;
     }
     public function json2(){
-        $params = DB::table('questions')->get()->toJson();
+
+        $params =  DB::table('ac')
+        ->select(DB::raw('count(*) as ac_count, question_qid'))
+        ->groupBy('question_qid')->get();
         return $params;
 
     }

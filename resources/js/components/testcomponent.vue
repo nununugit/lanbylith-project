@@ -54,7 +54,7 @@ export default {
     data :function(){
         return {
             msg:'wait',
-            questions:[]
+            questions:[],
         }
         console.log(questions);
     },

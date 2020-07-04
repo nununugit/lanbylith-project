@@ -3,6 +3,7 @@
 
 @section('content')
 
+<script src="{{ asset('js/clearflag_jquery.js') }}" defer></script>
 <link href="{{ asset('css/app3.css') }}" rel="stylesheet">
 <div class="container">
     <div class="row row-cols-1 row-cols-md-5">
@@ -12,60 +13,15 @@
           </script>
         @endif
 
-            @if(empty($clearflags))
             @foreach($questions as $question)
-            <div class="card" style="width: 18rem;">
+            <div class="card flagcori{{ $question->qid }}" style ="width: 18rem;">
                 <div class="card-body">
                 <h5 class="card-title">{{ $question -> qid  }}</h5>
               <p class="card-text">{{ $question -> title }}</p>
               <input value="回答" name="{{  $question -> qid  }}" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{  $question -> qid  }}">
                 </div>
             </div>
-              @endforeach
-            @endif
-
-            @unless(empty($clearflags))
-
-            @php
-            $i = 1
-            @endphp
-
-            @foreach ($questions as $question)
-            @foreach ($clearflags as $clearflag)
-
-            @if($question->qid === $clearflag->question_qid)
-            <div class="card cleard" style="width: 18rem;">
-                <div class="card-body">
-                <h5 class="card-title">{{ $i  }}</h5>
-              <p class="card-text">{{ $question -> title }}</p>
-              <button class="btn btn-primary">cleard</button>
-                </div>
-            </div>
-
-            @php
-            $i++
-            @endphp
-
-        @break
-            @elseif($loop->last)
-
-            <div class="card" style="width: 18rem;">
-                <div class="card-body">
-                <h5 class="card-title">{{ $i  }}</h5>
-              <p class="card-text">{{ $question -> title }}</p>
-              <input value="回答" name="{{  $question -> qid  }}" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{  $question -> qid  }}">
-                </div>
-            </div>
-            @php
-            $i++
-            @endphp
-
-            @endif
             @endforeach
-            @endforeach
-
-            @endunless
-        </table>
         </div>
 
         @foreach ($questions as $question)
