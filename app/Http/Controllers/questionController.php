@@ -30,12 +30,18 @@ class questionController extends Controller
     public function json(){
         $params =  DB::table('ac')
         ->select(DB::raw('count(*) as ac_count, question_qid'))
-        ->groupBy('question_qid')->get();
+        ->groupBy('question_qid')->toJson();
         return $params;
+    }
+    public function json2(){
+        $params = DB::table('questions')->get()->toJson();
+        return $params;
+
     }
     //テストよう
     public function question2()
     {
+
         $msg = '';
         $params =  DB::table('questions') ->oldest('lv_lvid')->get();
         $clearflagcnt = DB::table('ac')->join('users','users.id', '=','ac.user_id')

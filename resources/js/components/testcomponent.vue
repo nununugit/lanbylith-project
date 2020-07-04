@@ -1,93 +1,78 @@
-<style scoped>
-    .layout{
-        border: 1px solid #d7dde4;
-        background: #f5f7f9;
-    }
-    .layout-logo{
-        width: 100px;
-        height: 30px;
-        background: #5b6270;
-        border-radius: 3px;
-        float: left;
-        position: relative;
-        top: 15px;
-        left: 20px;
-    }
-    .layout-nav{
-        width: 420px;
-        margin: 0 auto;
-    }
-    .layout-assistant{
-        width: 300px;
-        margin: 0 auto;
-        height: inherit;
-    }
-    .layout-breadcrumb{
-        padding: 10px 15px 0;
-    }
-    .layout-content{
-        min-height: 200px;
-        margin: 15px;
-        overflow: hidden;
-        background: #fff;
-        border-radius: 4px;
-    }
-    .layout-content-main{
-        padding: 10px;
-    }
-    .layout-copy{
-        text-align: center;
-        padding: 10px 0 20px;
-        color: #9ea7b4;
-    }
-</style>
 <template>
-    <div class="layout">
-        <Menu mode="horizontal" theme="dark" active-name="1">
-            <div class="layout-logo"></div>
-            <div class="layout-nav">
-                <Menu-item name="1">
-                    <Icon type="ios-navigate"></Icon>
-                    1
-                </Menu-item>
-                <Menu-item name="2">
-                    <Icon type="ios-keypad"></Icon>
-                    2
-                </Menu-item>
-                <Menu-item name="3">
-                    <Icon type="ios-analytics"></Icon>
-                    3
-                </Menu-item>
-                <Menu-item name="4">
-                    <Icon type="ios-paper"></Icon>
-                    4
-                </Menu-item>
+<div class="container">
+    <hr>
+        <p>{{msg}}</p>
+    <div class="row row-cols-1 row-cols-md-5">
+       <div class="card" v-bind:class="'flagcori'+question.qid" style="width: 18rem;" v-for="question in questions" v-bind:key="question.qid" >
+                <div class="card-body">
+                <h5 class="card-title">{{ question.qid  }}</h5>
+              <p class="card-text">{{ question.title }}</p>
+              <input value="回答" v-bind:name="question.qid" type="button" class="btn btn-primary" data-toggle="modal" v-bind:data-target="'#exampleModal'+question.qid"  >
+                </div>
             </div>
-        </Menu>
-        <Menu mode="horizontal" active-name="1">
-            <div class="layout-assistant">
-                <Menu-item name="1">2</Menu-item>
-                <Menu-item name="2">2</Menu-item>
-                <Menu-item name="3">2</Menu-item>
-            </div>
-        </Menu>
-        <div class="layout-breadcrumb">
-            <Breadcrumb>
-                <Breadcrumb-item href="#">a</Breadcrumb-item>
-                <Breadcrumb-item href="#">a</Breadcrumb-item>
-                <Breadcrumb-item>a</Breadcrumb-item>
-            </Breadcrumb>
-        </div>
-        <div class="layout-content">
-            a
-        </div>
-        <div class="layout-copy">
-            2011-2016 &copy; TalkingData
-        </div>
     </div>
-</template>
-<script>
-    export default {
 
+    <div class="modal fade" v-bind:id="'exampleModal'+question.qid" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"  v-for="question in questions" v-bind:key="question.qid">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">{{ question.title}}</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>{{question.content}}</p>
+            </div>
+            <form action="/question" method="post">
+            <div class="modal-footer">
+                    <div class="form-group row">
+                        <input class="form-control" type="text" name="answer" >
+                    </div>
+
+                    <div class="form-group row">
+                        <input class="form-control" type="hidden" name ="qid" v-bind:value="question.qid">
+                    </div>
+
+                    <div class = "form-group row">
+                        <input class="btn btn-primary " type="submit" value="送信">
+                    </div>
+
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+            </div><!-- /.modal-footer -->
+        </form>
+
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+</div>
+</template>
+
+<script>
+const axios=require('axios');
+export default {
+    data :function(){
+        return {
+            msg:'wait',
+            questions:[]
+        }
+        console.log(questions);
+    },
+    mounted () {
+        axios.get('/api/question')
+        .then(response =>{
+            console.log(response);
+            this.questions = response.data
+            this.msg = 'getdata'
+        })
+        .catch(function (error) {
+        console.log(error);
+        });
+        },
+    methods:{
+        doAction : function(){
+            this.msg = 'hello'
+        }
     }
+}
 </script>

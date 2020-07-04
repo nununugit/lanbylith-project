@@ -38,5 +38,8 @@ Route::get('/rank', 'rankController@rank');
 // テスト用のコントローラ
 Route::get('/percent','percentController@percent');
 Route::get('/nav','percentController@navs');
-Route::get('/api/question','questionController@json');
+Route::get('/api/ac','questionController@json');
+Route::get('/api/clearflag','clearflagController@json');
+Route::get('/api/question','questionController@json2');
+
 Route::get('/question2', 'questionController@question2');
