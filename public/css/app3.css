@@ -1,44 +1,8 @@
-.parent {
-    /*親要素*/
-    position: relative;
-    height: 200px;
-  }
 
-  .parent p {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform : translate(-50%,-50%);
-    transform : translate(-50%,-50%);
-    width: auto;
-    text-align: center;/*一応BOX内の文字も中央寄せ*/
-  }
-
-  table{
-    border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-  }
-
-  table tr{
-    border-bottom: solid 1px #eee;
-    cursor: pointer;
-  }
-
-
-  table th,table td{
-    text-align: center;
-    width: 25%;
-    padding: 15px 0;
-  }
-
-table td.icon{
-    background-size: 35px;
-    background-position: left 5px center;
-    background-repeat: no-repeat;
-    padding-left: 30px;
-}
 div .cleard{
     background-color: #DDFFDD;
-
 }
+/* div .obi{
+    background:linear-gradient(to right, red 50%, yellow 50%);
+
+} */

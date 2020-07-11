@@ -12,12 +12,16 @@ class user_table_seeder extends Seeder
      */
     public function run()
     {
-        \App\User::create([
-            'name' => 'anuma7',
-            'email' => 'a@a',
-            'password' => bcrypt('password'),
-            'group_gid' => '1'
-        ]);
+        $count=0;
+        $emails = ['a@a','a@b', 'a@c','a@d','a@e','a@f','a@g'];
+        foreach($emails as $email ){
+            \App\User::create([
+                'name' => 'anuma',
+                'email' => $email,
+                'password' => bcrypt('password'),
+                'group_gid' => $count++
+            ]);
+        }
     }
 
 }

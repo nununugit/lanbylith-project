@@ -2,11 +2,15 @@
 @extends('layouts.navbar')
 
 @section('content')
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+</head>
+<html>
 
 <script src="{{ asset('js/app_percent_jquery.js') }}" defer></script>
 <script src="{{ asset('js/clearflag_jquery.js') }}" defer></script>
 <link href="{{ asset('css/app3.css') }}" rel="stylesheet">
-<link href="{{ asset('css/app_percent.css') }}" rel="stylesheet">
+    <body>
 
 @if(!empty($message))
 <script>
@@ -15,27 +19,20 @@
 @endif
 
 <div class="container">
-        <div class="row row-cols-1 row-cols-md-5">
+        <div class="row row-cols-1 row-cols-md-4" >
             @foreach($questions as $question)
-            <div class="card flagcori{{ $question-> qid }}" style="width: 18rem">
+          <div class="col mb-4" >
+            <div class="card percent flagcori{{ $question-> qid }}" data-toggle="modal" data-target="#exampleModal{{  $question -> qid  }}">
                 <div class="card-body">
                 <h5 class="card-title">{{ $question-> qid }}</h5>
               <p class="card-text">{{ $question -> title }}</p>
-              <input value="回答" name="{{  $question -> qid  }}" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal{{  $question -> qid  }}">
-
-              <div class="progress-pie-chart{{ $question-> qid }}" data-percent="0">
-                <div class="ppc-progress">
-                  <div class="ppc-progress-fill"></div>
                 </div>
 
-                <div class="ppc-percents">
-                  <div class="pcc-percents-wrapper">
-                    <span>%</span>
-                  </div>
+                <div class="card-footer obi">
+                    <div class="car{{ $question -> qid }}">正答率 0%</div>
                 </div>
-                </div>
-              </div>
             </div>
+          </div>
             @endforeach
         </div>
 
@@ -78,5 +75,7 @@
             </div><!-- /.modal-dialog -->
           </div><!-- /.modal -->
             @endforeach
-</div>
+    </div>
+    </body>
+</html>
 @endsection
