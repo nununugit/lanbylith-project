@@ -14,7 +14,6 @@ $(function(){
                         percent = (data[j].ac_count/7)*100
                         percent = percent.toFixed(0)
                         console.log(percent)
-
                         let obi = 2.53*percent
                         obi = obi.toFixed(0)
                         let obisiro = 253 -obi
