@@ -44,7 +44,6 @@ class questionController extends Controller
     //テストよう
     public function question2()
     {
-
         $msg = '';
         $params =  DB::table('questions') ->oldest('lv_lvid')->get();
         $clearflagcnt = DB::table('ac')->join('users','users.id', '=','ac.user_id')

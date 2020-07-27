@@ -33,7 +33,7 @@ class answerController extends Controller
                    'ctime'=>Carbon::now()
                ];
                DB::table('ac')->insert($param);
-           $msg = 'correct answer';
+           $msg = '1';
            $clearflag = DB::table('ac')->join('users','users.id', '=','ac.user_id')
            ->select('question_qid')
            ->where('group_gid','=',Auth::user()->group_gid)->get();
@@ -42,7 +42,7 @@ class answerController extends Controller
 
            }else{
 
-               $msg = 'incorrect answer';
+               $msg = '2';
                return view('question',['questions'=> $params ,'message' => $msg, 'clearflags' => $clearflag]);
            }
         }
