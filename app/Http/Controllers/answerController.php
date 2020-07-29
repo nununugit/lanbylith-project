@@ -27,7 +27,7 @@ class answerController extends Controller
 
         if(DB::table('ac')->join('users','users.id', '=','ac.user_id')->select('ctime')->whereRaw('group_gid = ? and question_qid = ?', [ $gid ,$qid ])->exists()){
             //無限に点数を入れられないために
-            $msg = '既に解いた問題です';
+            $msg = '3';
             return view('question',['questions'=> $params ,'message' => $msg, 'clearflags' => $clearflag]);
         }else{
             if(DB::table('questions')->whereRaw('qid = ? and answer = ?', [$qid,$answer ])->exists()){

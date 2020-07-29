@@ -12,7 +12,7 @@ class user_table_seeder extends Seeder
      */
     public function run()
     {
-        $count=0;
+        $count=1;
         $emails = ['a@a','a@b', 'a@c','a@d','a@e','a@f','a@g'];
         foreach($emails as $email ){
             \App\User::create([

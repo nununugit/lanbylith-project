@@ -1,8 +1,20 @@
 @extends('layouts.navbar')
 
 @section('content')
-<link href="{{ asset('css/app3.css') }}" rel="stylesheet">
-<div class="parent">
-    <p>Until starting CTF, please wait just a minute</p>
-</div>
+<body>
+    <div class = "container">
+        <div class="jumbotron mt-4">
+        <h2><b>質問箱</b></h2>
+      <br>
+      <form action="/home" method="post">
+          @csrf
+        <div class="form-group">
+            <textarea class="form-control" name="situmon" rows="10" cols="50" id="exampleFormControlSelect2" placeholder="質問を入れてください"></textarea>
+        </div>
+        @csrf
+        <input type="submit" name="qanda" value="送信" class="btn btn-primary btn-block">
+        </form>
+        </div>
+        </div>
+</body>
 @endsection

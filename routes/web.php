@@ -32,6 +32,7 @@ Route::post('members/password/reset', 'Auth\ResetPasswordController@reset');
 
 //自分のコントローラ
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/home','HomeController@qanda');
 Route::get('/question', 'questionController@question');
 Route::post('/question', 'answerController@answer');
 Route::get('/rank', 'rankController@rank');

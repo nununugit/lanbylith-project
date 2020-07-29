@@ -18,17 +18,24 @@
 <link href="{{ asset('css/app_circle.css') }}" rel="stylesheet">
 <script src="{{ asset('js/aci_jquery.js') }}" defer></script>
 
-@if(($message=='1'))
+    @if(($message=='1'))
         <div class="circle display-none">
         </div>
-        @endif
+    @endif
 
-        @if(($message=='2'))
+    @if(($message=='2'))
         <div class="cross display-none">
         ×
         </div>
-        @endif
-        @endunless
+    @endif
+
+    @if(($message=='3'))
+    <script>
+        alert('既に解いた問題です');
+    </script>
+    @endif
+
+@endunless
 
         <div class="row row-cols-1 row-cols-md-4" >
             @foreach($questions as $question)
