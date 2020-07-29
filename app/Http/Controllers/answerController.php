@@ -9,6 +9,11 @@ use Illuminate\Http\Response;
 
 class answerController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
      public function answer(Request $request)
     {
         $qid = $request->qid;
@@ -41,7 +46,6 @@ class answerController extends Controller
            return view('question',['questions'=> $params ,'message' => $msg ,'clearflags' => $clearflag]);
 
            }else{
-
                $msg = '2';
                return view('question',['questions'=> $params ,'message' => $msg, 'clearflags' => $clearflag]);
            }

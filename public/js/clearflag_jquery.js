@@ -9,7 +9,6 @@ $(function(){
             for(i=0; i<data.length ; i++){
             console.log(data.length);
                 $('.flagcori'+data[i].question_qid).addClass('cleard');
-                $(".cleard").addClass("animate__animated animate__flip");
                 }
         },
         error: function(XMLHttpRequest, status, errorThrown){

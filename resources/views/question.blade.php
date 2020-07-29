@@ -12,24 +12,24 @@
 <link href="{{ asset('css/app3.css') }}" rel="stylesheet">
     <body>
 
+<div class="container">
 
 @unless(empty($message))
-<script src="{{ asset('js/aci_jquery.js') }}" defer></script>
 <link href="{{ asset('css/app_circle.css') }}" rel="stylesheet">
-        @if(($message=='1'))
-        <div class="circle">
+<script src="{{ asset('js/aci_jquery.js') }}" defer></script>
 
+@if(($message=='1'))
+        <div class="circle display-none">
         </div>
         @endif
 
         @if(($message=='2'))
-        <div class="cross">
+        <div class="cross display-none">
         ×
         </div>
         @endif
-
         @endunless
-<div class="container">
+
         <div class="row row-cols-1 row-cols-md-4" >
             @foreach($questions as $question)
           <div class="col mb-4" >

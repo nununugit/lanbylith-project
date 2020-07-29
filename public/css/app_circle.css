@@ -1,4 +1,7 @@
-.circle{
+div .display-none{
+    display: none;
+}
+div .circle{
     position: absolute;
     display: inline-block;
     width: 600px;
@@ -14,9 +17,25 @@
     left: 50%;
     -webkit-transform : translate(-50%,-50%);
     transform : translate(-50%,-50%);
+
+    overflow: hidden;
+
     z-index: 2;
 }
-.cross{
+div .cross{
+
+    position: absolute;
+    display: inline-block;
+    color:blue;
+
+    top: 50%;
+    left: 50%;
+    -webkit-transform : translate(-50%,-50%);
+    transform : translate(-50%,-50%);
+
+    font-size: 600px;
+
+    overflow: hidden;
 
     z-index: 2;
 }
