@@ -36,3 +36,11 @@
     border-bottom: 5px solid  #00B0F0;
     }
 
+    div .gauge_wrap li{
+        width:25px;
+        height:25px;
+        margin:15 0.3%;
+        display:inline-block;
+        background:#FDAB75;
+        transform:skewX(-30deg);
+    }

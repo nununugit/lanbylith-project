@@ -39,7 +39,7 @@
             </a>
 
             <div class='navbar2nd'>
-                <link href="{{ asset('css/app2.css') }}" rel="stylesheet">
+                <link href="{{ asset('css/navbar.css') }}" rel="stylesheet">
                 <nav class="navbar-nav mr-auto">
                 <ul>
                 <li class="url1"><a href="{{ url('/home') }}">Home</a></li>
@@ -50,9 +50,20 @@
                 </nav>
             </div>
 
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+            <div class="gauge">
+                <ul class="gauge_wrap">
+                        <li class="gauge1"></li>
+                        <li class="gauge2"></li>
+                        <li class="gauge3"></li>
+                        <li class="gauge4"></li>
+                        <li class="gauge5"></li>
+                        <li class="gauge6"></li>
+                </ul>
+            </div>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->

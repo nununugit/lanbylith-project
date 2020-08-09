@@ -11,7 +11,7 @@ $(function(){
                 for(j=counter; j<data.length;j++){
                     if(data[j].question_qid == i+1){
                         let percent =0
-                        percent = (data[j].ac_count/7)*100
+                        percent = (data[j].ac_count/5)*100
                         percent = percent.toFixed(0)
                         console.log(percent)
                         let obi = 2.53*percent

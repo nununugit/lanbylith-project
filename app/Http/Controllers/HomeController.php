@@ -31,11 +31,17 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    public function qanda(Request $request){
+    public function qanda(){
+        $params = situmon::all();
+        return view('qanda',['params' => $params]);
+    }
+    public function post_qanda(Request $request){
         $situmon = new situmon();
+        $situmon -> user_id = Auth::user()->id;
         $situmon -> situmon = $request -> situmon;
         $situmon -> answer = '未回答';
         $situmon->save();
         return redirect('/home');
     }
+
 }

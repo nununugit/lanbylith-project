@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSitumonTable extends Migration
+class CreateGachacountTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateSitumonTable extends Migration
      */
     public function up()
     {
-        Schema::create('situmons', function (Blueprint $table) {
+        Schema::create('gachacount', function (Blueprint $table) {
             $table->id();
-            $table->string('situmon');
-            $table->string('answer');
 
-            $table->integer('user_id')->unsigned();
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('group_gid')->unsigned();
+            $table->foreign('group_gid')->references('gid')->on('groups');
 
+            $table->integer('count');
             $table->timestamps();
         });
     }
@@ -32,6 +31,6 @@ class CreateSitumonTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('situmon');
+        Schema::dropIfExists('gachacount');
     }
 }

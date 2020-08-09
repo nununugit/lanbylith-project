@@ -16,19 +16,19 @@ class lv_table_seeder extends Seeder
 
 
         $param = [
-            'lvname' => '簡単',
+            'lvname' => 'easy',
             'score' => '1'
         ];
         DB::table('lv')->insert($param);
 
         $param = [
-            'lvname' => '普通',
+            'lvname' => 'normal',
             'score' => '2'
         ];
         DB::table('lv')->insert($param);
 
         $param = [
-            'lvname' => '難しい',
+            'lvname' => 'hard',
             'score' => '3'
         ];
         DB::table('lv')->insert($param);

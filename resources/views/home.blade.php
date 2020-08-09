@@ -14,7 +14,9 @@
         @csrf
         <input type="submit" name="qanda" value="送信" class="btn btn-primary btn-block">
         </form>
-        </div>
+
+    <a class="situmon" href="{{ route('qanda') }}">よくある質問</a>
+    </div>
         </div>
 </body>
 @endsection
