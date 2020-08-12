@@ -50,17 +50,15 @@
                 </nav>
             </div>
 
-            <div class="gauge">
-                <ul class="gauge_wrap">
-                        <li class="gauge1"></li>
-                        <li class="gauge2"></li>
-                        <li class="gauge3"></li>
-                        <li class="gauge4"></li>
-                        <li class="gauge5"></li>
-                        <li class="gauge6"></li>
-                </ul>
-            </div>
-
+            <ul class="gauge">
+                <li class="gauge1"></li>
+                <li class="gauge2"></li>
+                <li class="gauge3"></li>
+                <li class="gauge4"></li>
+                <li class="gauge5"></li>
+                <li class="gauge6"></li>
+            </ul>
+                
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>
             </button>

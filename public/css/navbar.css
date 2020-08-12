@@ -35,12 +35,18 @@
     .navbar2nd nav ul li:hover{
     border-bottom: 5px solid  #00B0F0;
     }
-
-    div .gauge_wrap li{
+    div .gauge {
+    top: 50%; /*親要素を起点に上から50%*/
+    position: relative;
+    margin: 0 auto;
+    }
+    .gauge li{
+        
         width:25px;
         height:25px;
         margin:15 0.3%;
         display:inline-block;
-        background:#FDAB75;
+        background:#00B0F0;
         transform:skewX(-30deg);
+        
     }
