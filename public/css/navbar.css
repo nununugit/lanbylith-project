@@ -41,12 +41,12 @@
     margin: 0 auto;
     }
     .gauge li{
-        
         width:25px;
         height:25px;
         margin:15 0.3%;
         display:inline-block;
-        background:#00B0F0;
+        background:#F7F7F7;
         transform:skewX(-30deg);
-        
+        border: solid;
+        border-color: black;
     }

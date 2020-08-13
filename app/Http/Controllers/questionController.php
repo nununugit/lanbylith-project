@@ -32,20 +32,6 @@ class questionController extends Controller
 
         return view('question',['questions'=> $params ,'message' => $msg , 'clearflags' => $clearflag]);
     }
-    public function json(){
-        $params =  DB::table('ac')
-        ->select(DB::raw('count(*) as ac_count, question_qid'))
-        ->groupBy('question_qid')->toJson();
-        return $params;
-    }
-    public function json2(){
-
-        $params =  DB::table('ac')
-        ->select(DB::raw('count(*) as ac_count, question_qid'))
-        ->groupBy('question_qid')->get();
-        return $params;
-
-    }
     //テストよう
     public function question2()
     {

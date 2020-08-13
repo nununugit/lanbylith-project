@@ -12,7 +12,7 @@ $(function(){
                 }
         },
         error: function(XMLHttpRequest, status, errorThrown){
-            console.log("fail:" + XMLHttpRequest);
+        console.log("fail:" + XMLHttpRequest);
 	    console.log("status:" + status);
             return 処理結果;
         }

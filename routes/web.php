@@ -37,11 +37,15 @@ Route::post('/home','HomeController@post_qanda');
 Route::get('/question', 'questionController@question');
 Route::post('/question', 'answerController@answer');
 Route::get('/rank', 'rankController@rank');
-// テスト用のコントローラ
-Route::get('/percent','percentController@percent');
-Route::get('/nav','percentController@navs');
-Route::get('/api/clearflag','clearflagController@json');
+// json用のコントローラ
+Route::get('/api/clearflag','clearflagController@clearflag');
 Route::get('/api/car','questionController@json2');
+Route::get('/api/aci','clearflagController@json');
+
+Route::get('/api/clearflag','jsonController@clearflag');
+Route::get('/api/car','jsonController@car');
+Route::get('/api/ac','jsonController@ac');
+
 //correct answer rate　正答率
 
 Route::get('/question2', 'questionController@question2');
