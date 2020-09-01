@@ -38,9 +38,7 @@ Route::get('/question', 'questionController@question');
 Route::post('/question', 'answerController@answer');
 Route::get('/rank', 'rankController@rank');
 // json用のコントローラ
-Route::get('/api/clearflag','clearflagController@clearflag');
 Route::get('/api/car','questionController@json2');
-Route::get('/api/aci','clearflagController@json');
 
 Route::get('/api/clearflag','jsonController@clearflag');
 Route::get('/api/car','jsonController@car');

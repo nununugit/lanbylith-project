@@ -11,9 +11,12 @@ $(function(){
             for(let i=1;i<=g_count;i++){
                 $('.gauge'+i).css('background','red')
             }
-            if(g_count==0){
+            
+            if(g_count==0&&data.length!=0){
+                for(i=1;i<=6;i++){
+                $('.gauge'+i).css('background', 'yellow')
+                }
                 console.log('gacha go!!!')
-                
             }else{
                 console.log('more than'+(6 - data.length)+'correct answer')
             }
