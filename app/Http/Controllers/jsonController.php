@@ -25,4 +25,9 @@ class jsonController extends Controller
         $params =  DB::table('ac')->where('user_id','=',Auth::user()->id)->get();
         return $params;
     }
+
+    public function news(){
+        $news = DB::table('news')->oldest('date')->get();
+        return $news;
+    } 
 }

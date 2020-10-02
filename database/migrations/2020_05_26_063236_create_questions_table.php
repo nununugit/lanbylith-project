@@ -19,8 +19,8 @@ class CreateQuestionsTable extends Migration
             $table->integer('lv_lvid')->unsigned();
             $table->foreign('lv_lvid')->references('lvid')->on('lv');
 
-            $table->string('title');
-            $table->string('content');
+            $table->string('title',500);
+            $table->string('content',500);
             $table->string('answer');
             $table->timestamps();
         });

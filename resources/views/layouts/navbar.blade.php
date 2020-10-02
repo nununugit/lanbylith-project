@@ -45,7 +45,7 @@
                 <li class="url1"><a href="{{ url('/home') }}">Home</a></li>
                 <li class="url2"><a href="{{ url('/question') }}">Question</a></li>
                 <li class="url3"><a href="{{ url('/rank') }}">Rank</a></li>
-                <li class="url4"><a href={{ url('/mail') }}>Mail</a></li>
+                <li class="url4"><a href="{{ url('/news') }}">News</a></li>
                 </ul>
                 </nav>
             </div>

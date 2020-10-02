@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('/members/login');
 });
 // Authの設定
 Route::get('members/login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -37,12 +37,13 @@ Route::post('/home','HomeController@post_qanda');
 Route::get('/question', 'questionController@question');
 Route::post('/question', 'answerController@answer');
 Route::get('/rank', 'rankController@rank');
+Route::get('/news', 'newsController@news_list');
 // json用のコントローラ
-Route::get('/api/car','questionController@json2');
 
 Route::get('/api/clearflag','jsonController@clearflag');
 Route::get('/api/car','jsonController@car');
 Route::get('/api/ac','jsonController@ac');
+Route::get('/api/news','jsonController@news');
 
 //correct answer rate　正答率
 
