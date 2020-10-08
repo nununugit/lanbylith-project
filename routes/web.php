@@ -20,7 +20,6 @@ Route::get('/', function () {
 Route::get('members/login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('members/login', 'Auth\LoginController@login');
 Route::post('members/logout', 'Auth\LoginController@logout')->name('logout');
-
 Route::get('members/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
 Route::post('members/register', 'Auth\RegisterController@register');
 
@@ -38,6 +37,7 @@ Route::get('/question', 'questionController@question');
 Route::post('/question', 'answerController@answer');
 Route::get('/rank', 'rankController@rank');
 Route::get('/news', 'newsController@news_list');
+Route::get('/roulette','rouletteController@roulette');
 // json用のコントローラ
 
 Route::get('/api/clearflag','jsonController@clearflag');
