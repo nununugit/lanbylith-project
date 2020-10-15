@@ -30,4 +30,7 @@ class jsonController extends Controller
         $news = DB::table('news')->oldest('date')->get();
         return $news;
     } 
+    public function roulette(){
+        $roulette = DB::table('news')->oldest('date')->get();
+    }
 }

@@ -21,6 +21,8 @@ class news_table_seeder extends Seeder
             飼育員によると「掃除のために檻を開けてしまっていた。パンダがとても心配。」とのこと。',
         ]);
     
+        sleep(100);
+
         DB::table('news')->insert([
             'title'=> '脱走のパンダ発見　品川区',
             'author'=> '竹本',

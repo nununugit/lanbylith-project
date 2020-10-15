@@ -6,11 +6,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
 </head>
 <html>
-
-<script src="{{ asset('js/app_percent_jquery.js') }}" defer></script>
-<script src="{{ asset('js/clearflag_jquery.js') }}" defer></script>
-<link href="{{ asset('css/app3.css') }}" rel="stylesheet">
-    <body>
+<body>
 
 <div class="container">
 
@@ -94,6 +90,10 @@
           </div><!-- /.modal -->
             @endforeach
     </div>
+  <script src="{{ asset('js/app_percent_jquery.js') }}" defer></script>
+  <script src="{{ asset('js/clearflag_jquery.js') }}" defer></script>
+  <link href="{{ asset('css/app3.css') }}" rel="stylesheet">
+
     </body>
 </html>
 @endsection

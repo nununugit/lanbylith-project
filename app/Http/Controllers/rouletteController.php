@@ -18,6 +18,6 @@ class rouletteController extends Controller
     }
 
     public function roulette(){
-        return view('gacha');
+        return view('roulette');
     }
 }
