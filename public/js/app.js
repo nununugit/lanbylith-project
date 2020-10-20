@@ -49940,14 +49940,14 @@ module.exports = function(module) {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(__webpack_provided_window_dot_Vue, Vue) {/**
+/**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
-__webpack_provided_window_dot_Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
+window.Vue = __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js");
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -49969,7 +49969,6 @@ Vue.component('test-component', __webpack_require__(/*! ./components/testcompone
 var app = new Vue({
   el: '#app'
 });
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js"), __webpack_require__(/*! vue */ "./node_modules/vue/dist/vue.common.js")))
 
 /***/ }),
 
@@ -50175,8 +50174,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\allys\デスクトップ\laravelアプリケーションs\cst2020_proto\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\allys\デスクトップ\laravelアプリケーションs\cst2020_proto\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Applications/develop/CST_beta/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Applications/develop/CST_beta/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
+use App\roulette;
+
 use Illuminate\Http\Request;
 
 class jsonController extends Controller
@@ -30,7 +32,12 @@ class jsonController extends Controller
         $news = DB::table('news')->oldest('date')->get();
         return $news;
     } 
-    public function roulette(){
-        $roulette = DB::table('news')->oldest('date')->get();
+    public function roulette(request $request){
+        $uid = Auth::user()->id;
+        $param = [
+            'user_id' =>  $uid ,
+            'number'=>$request->number
+        ];
+        DB::table('roulette')->insert($param);
     }
 }

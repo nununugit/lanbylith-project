@@ -21,7 +21,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-
+    <meta name="Content-Style-Type" content="text/css">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js" integrity="sha512-qRj8N7fxOHxPkKjnQ9EJgLJ8Ng1OK7seBn1uk8wkqaXpa7OA13LO6txQ7+ajZonyc9Ts4K/ugXljevkFTUGBcw==" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -46,9 +50,10 @@
                 <li class="url1"><a href="{{ url('/home') }}">Home</a></li>
                 <li class="url2"><a href="{{ url('/question') }}">Question</a></li>
                 <li class="url3"><a href="{{ url('/rank') }}">Rank</a></li>
-                <li class="url4"><a href="{{ url('/news') }}">News</a></li>
-                <li class="url5"><a href="{{ url('/roulette') }}">roulette</a></li>
-                </ul>
+                <li class="url4"><a href="{{ url('/roulette') }}">roulette</a></li>
+                <li class="url5"><a href="{{ url('/hint') }}">Hint</a></li>
+
+            </ul>
                 </nav>
             </div>
             <script src="{{ asset('js/gauge_jquery.js') }}" defer></script>

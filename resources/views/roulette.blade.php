@@ -1,25 +1,19 @@
 @extends('layouts.navbar')
 @section('content')
 
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta name="Content-Style-Type" content="text/css">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" type="text/css" href="roulette_test2.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/less.js/2.5.1/less.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js" integrity="sha512-UXumZrZNiOwnTcZSHLOfcTs0aos2MzBWHXOHOuB0J/R44QB0dwY5JgfbvljXcklVf65Gc4El6RjZ+lnwd2az2g==" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js" integrity="sha512-qRj8N7fxOHxPkKjnQ9EJgLJ8Ng1OK7seBn1uk8wkqaXpa7OA13LO6txQ7+ajZonyc9Ts4K/ugXljevkFTUGBcw==" crossorigin="anonymous"></script>
-
-    </head>
     <body>
       <div class="roulette">
 
         <div class="main">
-          <button type="button" class="btn" id="spin"><span class="btn-label">Spin</span></button>
-          <button type="button" class="btn btn-reset" id="reset"><span class="btn-label">New Game</span></button> 
+          {{-- <form action="/api/roulette" method="POST">
+          <input type="hidden" class="number-submit" name="number" value="">
+          @csrf
+          <input type="submit" class="btn" id="spin" value="Spin">
+          </form>
+          --}}
+           <button type="button" class="btn" id="spin"><span class="btn-label">Spin</span></button> 
+
+           <button type="button" class="btn btn-reset" id="reset"><span class="btn-label">New Game</span></button> 
           <div class="plate" id="plate">
             <ul class="inner">
               <li class="number"><label><input type="radio" name="pit" value="15" /><span class="pit"></span></label></li>
@@ -82,7 +76,6 @@
       
       </div>
 <script src="{{ asset('js/roulette.js') }}" defer></script>
-<script src="{{ asset('js/roulette_jquery.js') }}" defer></script>
 <link href="{{ asset('css/roulette.css') }}" rel="stylesheet">
 
   </body>
