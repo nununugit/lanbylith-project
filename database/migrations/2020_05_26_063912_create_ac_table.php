@@ -22,6 +22,8 @@ class CreateAcTable extends Migration
             $table->integer('question_qid')->unsigned();
             $table->foreign('question_qid')->references('qid')->on('questions');
 
+            $table->boolean('rouletted')->default('0');
+
             $table->timestamp('ctime');
         });
     }

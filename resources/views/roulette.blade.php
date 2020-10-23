@@ -11,6 +11,7 @@
           <input type="submit" class="btn" id="spin" value="Spin">
           </form>
           --}}
+          
            <button type="button" class="btn" id="spin"><span class="btn-label">Spin</span></button> 
 
            <button type="button" class="btn btn-reset" id="reset"><span class="btn-label">New Game</span></button> 

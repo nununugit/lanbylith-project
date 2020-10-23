@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 
 class jsonController extends Controller
 {
-    
+
     public function clearflag(){
         $clearflag = DB::table('ac')->join('users','users.id', '=','ac.user_id')
         ->select('question_qid')
@@ -24,7 +24,7 @@ class jsonController extends Controller
         return $params;
     }
     public function ac(){
-        $params =  DB::table('ac')->where('user_id','=',Auth::user()->id)->get();
+        $params =  DB::table('ac')->whereRaw('user_id = ? AND rouletted =?',[Auth::user()->id,0])->get();
         return $params;
     }
 
@@ -32,12 +32,33 @@ class jsonController extends Controller
         $news = DB::table('news')->oldest('date')->get();
         return $news;
     } 
+
     public function roulette(request $request){
         $uid = Auth::user()->id;
-        $param = [
-            'user_id' =>  $uid ,
-            'number'=>$request->number
-        ];
-        DB::table('roulette')->insert($param);
+        if(DB::table('ac')->whereRaw('user_id = ? AND rouletted =?',[$uid,0])->exists()){
+        DB::table('ac')
+        ->whereRaw('user_id = ? AND rouletted =?',[$uid,0])
+        ->limit(1)
+        ->update(['rouletted' => 1]);
+
+            $param = [
+                'user_id' =>  $uid ,
+                'number'=>$request->number
+            ];
+            DB::table('roulette')->insert($param);
+        }else{
+            return $params;
+        }
+    }
+    public function sql(request $request){
+        $uid = Auth::user()->id;
+        if(DB::table('ac')->whereRaw('user_id = ? AND rouletted =?',[$uid,0])->exists()){
+        DB::table('ac')
+        ->whereRaw('user_id = ? AND rouletted =?',[$uid,0])
+        ->limit(1)
+        ->update(['rouletted' => 1]);
+        }else{
+            return 0;
+        }
     }
 }
