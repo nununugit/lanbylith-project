@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class rankController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function rank(){
     $grouprank =
     DB::table('gscore')

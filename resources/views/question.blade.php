@@ -62,7 +62,7 @@
                   </button>
                 </div>
                 <div class="modal-body">
-                  <p>{{ $question -> content }}</p>
+                  <p>{!!  nl2br(e($question -> content))  !!}</p>
                 </div>
                 <form action="/question" method="post">
                 <div class="modal-footer">

@@ -57,7 +57,6 @@
                 </nav>
             </div>
             <script src="{{ asset('js/gauge_jquery.js') }}" defer></script>
-            <i class="gacha_text"><h3>&emsp; &emsp; GACHA</h3></i>
             <ul class="gauge">
                 <li class="gauge1"></li>
                 <li class="gauge2"></li>

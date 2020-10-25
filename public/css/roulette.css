@@ -143,13 +143,10 @@
 }
 
 body {
+    font-family: 'Roboto', sans-serif;
     background: radial-gradient(hsl(0, 100%, 27%) 4%, hsl(0, 100%, 18%) 9%, hsla(0, 100%, 20%, 0) 9%) 0 0, radial-gradient(hsl(0, 100%, 27%) 4%, hsl(0, 100%, 18%) 8%, hsla(0, 100%, 20%, 0) 10%) 50px 50px, radial-gradient(hsla(0, 100%, 30%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 50px 0, radial-gradient(hsla(0, 100%, 30%, 0.8) 20%, hsla(0, 100%, 20%, 0)) 0 50px, radial-gradient(hsl(0, 100%, 20%) 35%, hsla(0, 100%, 20%, 0) 60%) 50px 0, radial-gradient(hsl(0, 100%, 20%) 35%, hsla(0, 100%, 20%, 0) 60%) 100px 50px, radial-gradient(hsla(0, 100%, 15%, 0.7), hsla(0, 100%, 20%, 0)) 0 0, radial-gradient(hsla(0, 100%, 15%, 0.7), hsla(0, 100%, 20%, 0)) 50px 50px, linear-gradient(45deg, hsla(0, 100%, 20%, 0) 49%, hsl(0, 0%, 0%) 50%, hsla(0, 100%, 20%, 0) 70%) 0 0, linear-gradient(-45deg, hsla(0, 100%, 20%, 0) 49%, hsl(0, 0%, 0%) 50%, hsla(0, 100%, 20%, 0) 70%) 0 0;
     background-color: #300;
     background-size: 100px 100px;
-}
-
-body .roulette {
-    font-family: 'Roboto', sans-serif;
 }
 
 .main {
@@ -207,12 +204,12 @@ body .roulette {
     background-color: transparent;
     border-left: 16px solid transparent;
     border-right: 16px solid transparent;
-    border-top: 175px solid red;
+    border-top: 175px solid black;
     box-sizing: border-box;
 }
 
-.number:nth-child(odd) {
-    border-top-color: black;
+.number:nth-child(even) {
+    border-top-color: red;
 }
 
 .number:nth-child(37) {
@@ -268,85 +265,85 @@ body .roulette {
     border-radius: 0;
 }
 
-.inner[data-spinto='1']:before {
+.inner[data-spinto='11']:before {
     transform: rotateZ(-2602deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='2']:before {
+.inner[data-spinto='21']:before {
     transform: rotateZ(-2774deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='3']:before {
+.inner[data-spinto='18']:before {
     transform: rotateZ(-2850deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='4']:before {
+.inner[data-spinto='20']:before {
     transform: rotateZ(-2793deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='5']:before {
+.inner[data-spinto='9']:before {
     transform: rotateZ(-2642deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='6']:before {
+.inner[data-spinto='23']:before {
     transform: rotateZ(-2734deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='7']:before {
+.inner[data-spinto='16']:before {
     transform: rotateZ(-2526deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='8']:before {
+.inner[data-spinto='26']:before {
     transform: rotateZ(-2673deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='9']:before {
+.inner[data-spinto='13']:before {
     transform: rotateZ(-2564deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='10']:before {
+.inner[data-spinto='27']:before {
     transform: rotateZ(-2652deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='11']:before {
+.inner[data-spinto='25']:before {
     transform: rotateZ(-2693deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='12']:before {
+.inner[data-spinto='17']:before {
     transform: rotateZ(-2868deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='13']:before {
+.inner[data-spinto='24']:before {
     transform: rotateZ(-2714deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='14']:before {
+.inner[data-spinto='12']:before {
     transform: rotateZ(-2582deg);
     transition: transform 9s ease-out;
     content: '\2022';
@@ -358,73 +355,73 @@ body .roulette {
     content: '\2022';
 }
 
-.inner[data-spinto='16']:before {
+.inner[data-spinto='10']:before {
     transform: rotateZ(-2622deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='17']:before {
+.inner[data-spinto='22']:before {
     transform: rotateZ(-2755deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='18']:before {
+.inner[data-spinto='14']:before {
     transform: rotateZ(-2545deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='19']:before {
+.inner[data-spinto='1']:before {
     transform: rotateZ(-2803deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='20']:before {
+.inner[data-spinto='30']:before {
     transform: rotateZ(-2592deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='21']:before {
+.inner[data-spinto='2']:before {
     transform: rotateZ(-2784deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='22']:before {
+.inner[data-spinto='32']:before {
     transform: rotateZ(-2554deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='23']:before {
+.inner[data-spinto='8']:before {
     transform: rotateZ(-2662deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='24']:before {
+.inner[data-spinto='34']:before {
     transform: rotateZ(-2632deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='25']:before {
+.inner[data-spinto='3']:before {
     transform: rotateZ(-2764deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='26']:before {
+.inner[data-spinto='36']:before {
     transform: rotateZ(-2840deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='27']:before {
+.inner[data-spinto='5']:before {
     transform: rotateZ(-2724deg);
     transition: transform 9s ease-out;
     content: '\2022';
@@ -436,13 +433,13 @@ body .roulette {
     content: '\2022';
 }
 
-.inner[data-spinto='29']:before {
+.inner[data-spinto='33']:before {
     transform: rotateZ(-2535deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='30']:before {
+.inner[data-spinto='7']:before {
     transform: rotateZ(-2684deg);
     transition: transform 9s ease-out;
     content: '\2022';
@@ -454,19 +451,19 @@ body .roulette {
     content: '\2022';
 }
 
-.inner[data-spinto='32']:before {
-    transform: rotateZ(-2822deg);
+.inner[data-spinto='19']:before {
+    transform: rotateZ(-2831deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='33']:before {
+.inner[data-spinto='29']:before {
     transform: rotateZ(-2612deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
-.inner[data-spinto='34']:before {
+.inner[data-spinto='4']:before {
     transform: rotateZ(-2745deg);
     transition: transform 9s ease-out;
     content: '\2022';
@@ -478,14 +475,14 @@ body .roulette {
     content: '\2022';
 }
 
-.inner[data-spinto='36']:before {
+.inner[data-spinto='6']:before {
     transform: rotateZ(-2703deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
 
 .inner[data-spinto='0']:before {
-    transform: rotateZ(-2831deg);
+    transform: rotateZ(-2822deg);
     transition: transform 9s ease-out;
     content: '\2022';
 }
@@ -665,4 +662,10 @@ body .roulette {
     100% {
         transform: rotateX(0deg);
     }
+}
+
+.white-text {
+    color: white;
+    font-size: large;
+    text-align: center;
 }
