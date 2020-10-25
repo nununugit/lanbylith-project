@@ -32,13 +32,16 @@ Route::post('members/password/reset', 'Auth\ResetPasswordController@reset');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/qanda', 'HomeController@qanda')->name('qanda');
 Route::post('/home','HomeController@post_qanda');
+//questionのやつ
 Route::get('/question/easy', 'questionController@question_easy');
 Route::get('/question/normal', 'questionController@question_normal');
 Route::get('/question/hard', 'questionController@question_hard');
-Route::post('/question', 'answerController@answer');
+Route::post('/question/easy', 'answerController@answer');
+//その他のナビバーシリーズ
 Route::get('/rank', 'rankController@rank');
-Route::any('/roulette','rouletteController@roulette');
-Route::any('/hint','hintController@hint');
+Route::get('/roulette','rouletteController@roulette');
+Route::get('/hint','hintController@hint');
+Route::get('/sort','sortController@sort');
 
 // json用のコントローラ
 Route::get('/api/clearflag','jsonController@clearflag');
@@ -47,6 +50,7 @@ Route::get('/api/car','jsonController@car');
 Route::get('/api/ac','jsonController@ac');
 Route::get('/api/news','jsonController@news');
 Route::any('/api/roulette','jsonController@roulette');
+Route::post('/api/sort','sortController@request_sort');
 
 //testようのコントローラー
 Route::get('/test/sql','jsoncontroller@sql');

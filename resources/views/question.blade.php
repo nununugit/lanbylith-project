@@ -64,7 +64,7 @@
                 <div class="modal-body">
                   <p>{!!  nl2br(e($question -> content))  !!}</p>
                 </div>
-                <form action="/question" method="post">
+              <form action="{{url('/question/easy')}}" method="post">
                 <div class="modal-footer">
                         @csrf
                         <div class="form-group row">

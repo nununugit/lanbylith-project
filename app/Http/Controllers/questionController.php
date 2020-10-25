@@ -32,5 +32,63 @@ class questionController extends Controller
 
         return view('question',['questions'=> $params ,'message' => $msg , 'clearflags' => $clearflag]);
     }
+
+    public function question_easy()
+    {
+        $msg = '';
+        $params =  DB::table('questions')->where('lv_lvid','=',1) ->oldest('qid')->get();
+        $clearflagcnt = DB::table('ac')->join('users','users.id', '=','ac.user_id')
+                    ->select('question_qid')
+                    ->where('group_gid','=',Auth::user()->group_gid)->count();
+
+        if($clearflagcnt < 1){
+            $clearflag = '';
+        }else{
+        $clearflag = DB::table('ac')->join('users','users.id', '=','ac.user_id')
+        ->select('question_qid')
+        ->where('group_gid','=',Auth::user()->group_gid)
+        ->get();
+        }
+
+        return view('question',['questions'=> $params ,'message' => $msg , 'clearflags' => $clearflag]);
+    }
+    public function question_normal()
+    {
+        $msg = '';
+        $params =  DB::table('questions') ->where('lv_lvid','=',2) ->oldest('qid')->get();
+        $clearflagcnt = DB::table('ac')->join('users','users.id', '=','ac.user_id')
+                    ->select('question_qid')
+                    ->where('group_gid','=',Auth::user()->group_gid)->count();
+
+        if($clearflagcnt < 1){
+            $clearflag = '';
+        }else{
+        $clearflag = DB::table('ac')->join('users','users.id', '=','ac.user_id')
+        ->select('question_qid')
+        ->where('group_gid','=',Auth::user()->group_gid)
+        ->get();
+        }
+
+        return view('question',['questions'=> $params ,'message' => $msg , 'clearflags' => $clearflag]);
+    }
+    public function question_hard()
+    {
+        $msg = '';
+        $params =  DB::table('questions') ->where('lv_lvid','=',3) ->oldest('qid')->get();
+        $clearflagcnt = DB::table('ac')->join('users','users.id', '=','ac.user_id')
+                    ->select('question_qid')
+                    ->where('group_gid','=',Auth::user()->group_gid)->count();
+
+        if($clearflagcnt < 1){
+            $clearflag = '';
+        }else{
+        $clearflag = DB::table('ac')->join('users','users.id', '=','ac.user_id')
+        ->select('question_qid')
+        ->where('group_gid','=',Auth::user()->group_gid)
+        ->get();
+        }
+
+        return view('question',['questions'=> $params ,'message' => $msg , 'clearflags' => $clearflag]);
+    }
    
 }

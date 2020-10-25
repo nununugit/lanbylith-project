@@ -52,28 +52,22 @@
                         <a class="nav-link dropdown-toggle" href="{{ url('/question') }}" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                           Question
                         </a>
+
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                           <a class="dropdown-item" href="{{ url('/question/easy') }}">easy</a>
-                          <a class="dropdown-item" href="{{ url('/question') }}">normal</a>
-                          <a class="dropdown-item" href="{{ url('/question') }}">veryhard</a>
+                          <a class="dropdown-item" href="{{ url('/question/normal') }}">normal</a>
+                          <a class="dropdown-item" href="{{ url('/question/hard') }}">hard</a>
                         </div>
                 </div>
                 <li class="url3"><a href="{{ url('/rank') }}">Rank</a></li>
                 <li class="url4"><a href="{{ url('/roulette') }}">roulette</a></li>
                 <li class="url5"><a href="{{ url('/hint') }}">Hint</a></li>
+                <li class="url7"><a href="{{ url('/sort') }}">Sort</a></li>
 
             </ul>
                 </nav>
             </div>
             <script src="{{ asset('js/gauge_jquery.js') }}" defer></script>
-            <ul class="gauge">
-                <li class="gauge1"></li>
-                <li class="gauge2"></li>
-                <li class="gauge3"></li>
-                <li class="gauge4"></li>
-                <li class="gauge5"></li>
-                <li class="gauge6"></li>
-            </ul>
                 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                 <span class="navbar-toggler-icon"></span>

@@ -20,7 +20,7 @@ class answerController extends Controller
         $answer = $request->answer;
         $uid = Auth::user()->id;
         $gid = Auth::user()->group_gid;
-        $params =  DB::table('questions')->get();
+        $params =  DB::table('questions')->where('lv_lvid','=',1) ->oldest('qid')->get();
         $clearflag = DB::table('ac')->join('users','users.id', '=','ac.user_id')
                     ->select('question_qid')
                     ->where('group_gid','=',Auth::user()->group_gid)->get();
