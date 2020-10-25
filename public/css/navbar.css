@@ -1,52 +1,62 @@
-    .navbar2nd nav{
-    position: relative;
+    .navbar2nd nav {
+        position: relative;
     }
-    .navbar2nd nav ul{
-    left:10%;
-    display: table;
-    margin: 0 auto;
-    padding: 0;
-    width: 80%;
-    text-align: center;
+    
+    .navbar2nd nav ul {
+        left: 10%;
+        display: table;
+        margin: 0 auto;
+        padding: 0;
+        width: 80%;
+        text-align: center;
     }
-    .navbar2nd nav ul li{
-    display: table-cell;
-    min-width: 100px;
+    
+    .navbar2nd nav ul li {
+        display: table-cell;
+        min-width: 100px;
     }
-    .navbar2nd nav ul li a{
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding: 5px 0;
-    text-decoration: none;
-    color: #aaa;
+    
+    .navbar2nd nav ul li a {
+        display: block;
+        width: 100%;
+        height: 100%;
+        padding: 5px 0;
+        text-decoration: none;
+        color: #aaa;
     }
-    .navbar2nd nav ul li.current{
-    font-weight: bold;
-    border-bottom: 5px solid #00B0F0;
+    
+    .navbar2nd nav ul li.current {
+        font-weight: bold;
+        border-bottom: 5px solid #00B0F0;
     }
-    .navbar2nd nav ul li.current a{
-    color: #00B0F0;
+    
+    .navbar2nd nav ul li.current a {
+        color: #00B0F0;
     }
-    .navbar2nd nav ul li a:hover{
-    color: #0089BB;
-    background-color:  #CCFFFF;
+    
+    .navbar2nd nav ul li a:hover {
+        color: #0089BB;
+        background-color: #CCFFFF;
     }
-    .navbar2nd nav ul li:hover{
-    border-bottom: 5px solid  #00B0F0;
+    
+    .navbar2nd nav ul li:hover {
+        border-bottom: 5px solid #00B0F0;
     }
+    
     div .gauge {
-    top: 50%; /*親要素を起点に上から50%*/
-    position: relative;
-    margin: 0 auto;
+        top: 50%;
+        /*親要素を起点に上から50%*/
+        position: relative;
+        margin: 0 auto;
     }
-    .gauge li{
-        width:25px;
-        height:25px;
-        margin:15 0.3%;
-        display:inline-block;
-        background:#F7F7F7;
-        transform:skewX(-30deg);
+    
+    .gauge li {
+        width: 25px;
+        height: 25px;
+        margin: 15 0.3%;
+        display: inline-block;
+        background: #F7F7F7;
+        transform: skewX(-30deg);
         border: solid;
         border-color: black;
     }

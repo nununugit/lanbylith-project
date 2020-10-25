@@ -30,7 +30,7 @@
 
 <body>
     <div >
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm　">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     @php
@@ -48,7 +48,16 @@
                 <nav class="navbar-nav mr-auto">
                 <ul>
                 <li class="url1"><a href="{{ url('/home') }}">Home</a></li>
-                <li class="url2"><a href="{{ url('/question') }}">Question</a></li>
+                <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="{{ url('/question') }}" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Question
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="{{ url('/question/easy') }}">easy</a>
+                          <a class="dropdown-item" href="{{ url('/question') }}">normal</a>
+                          <a class="dropdown-item" href="{{ url('/question') }}">veryhard</a>
+                        </div>
+                </div>
                 <li class="url3"><a href="{{ url('/rank') }}">Rank</a></li>
                 <li class="url4"><a href="{{ url('/roulette') }}">roulette</a></li>
                 <li class="url5"><a href="{{ url('/hint') }}">Hint</a></li>

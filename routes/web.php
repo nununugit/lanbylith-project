@@ -32,10 +32,13 @@ Route::post('members/password/reset', 'Auth\ResetPasswordController@reset');
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/qanda', 'HomeController@qanda')->name('qanda');
 Route::post('/home','HomeController@post_qanda');
-Route::get('/question', 'questionController@question');
+Route::get('/question/easy', 'questionController@question_easy');
+Route::get('/question/normal', 'questionController@question_normal');
+Route::get('/question/hard', 'questionController@question_hard');
 Route::post('/question', 'answerController@answer');
 Route::get('/rank', 'rankController@rank');
 Route::any('/roulette','rouletteController@roulette');
+Route::any('/hint','hintController@hint');
 
 // json用のコントローラ
 Route::get('/api/clearflag','jsonController@clearflag');
