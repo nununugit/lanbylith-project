@@ -61,8 +61,7 @@
                 </div>
                 <li class="url3"><a href="{{ url('/rank') }}">Rank</a></li>
                 <li class="url4"><a href="{{ url('/roulette') }}">roulette</a></li>
-                <li class="url5"><a href="{{ url('/hint') }}">Hint</a></li>
-                <li class="url7"><a href="{{ url('/sort') }}">Sort</a></li>
+                <li class="url5"><a href="{{ url('/sort') }}">Sort</a></li>
 
             </ul>
                 </nav>

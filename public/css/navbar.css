@@ -27,7 +27,6 @@
     
     .navbar2nd nav ul li.current {
         font-weight: bold;
-        border-bottom: 5px solid #00B0F0;
     }
     
     .navbar2nd nav ul li.current a {
@@ -36,11 +35,6 @@
     
     .navbar2nd nav ul li a:hover {
         color: #0089BB;
-        background-color: #CCFFFF;
-    }
-    
-    .navbar2nd nav ul li:hover {
-        border-bottom: 5px solid #00B0F0;
     }
     
     div .gauge {

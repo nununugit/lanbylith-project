@@ -16,6 +16,8 @@ class hintController extends Controller
     
     public function hint()
     {   
+        $params =  DB::table('questions') ->where('lv_lvid','=',3) ->oldest('qid')->get();
+
         $hints = DB::table('roulette')->join('users','users.id', '=','roulette.user_id')
                                       ->join('hints','hints.id','=','roulette.number')
                                       ->distinct()
@@ -23,6 +25,6 @@ class hintController extends Controller
                                       ->select('roulette.number' ,'hints.hint')
                                       ->where('roulette.number','<',21)
                                       ->where('group_gid','=',Auth::user()->group_gid)->get();
-        return view('hints',['hints'=>$hints]);
+        return view('hints',['hints'=>$hints,'questions'=>$params]);
     }
 }

@@ -2,8 +2,8 @@
 @section('content')
 
     <body>
-      <div class="roulette">
-
+      <div class="container">
+        <div class="roulette">
         <div class="main">
           
            <button type="button" class="btn" id="spin"><span class="btn-label">Spin</span></button> 
@@ -72,7 +72,7 @@
             </ol>
           </div>
         </div>
-      
+      </div>
       </div>
 <script src="{{ asset('js/roulette.js') }}" defer></script>
 <link href="{{ asset('css/roulette.css') }}" rel="stylesheet">

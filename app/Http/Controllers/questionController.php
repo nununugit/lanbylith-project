@@ -79,6 +79,14 @@ class questionController extends Controller
                     ->select('question_qid')
                     ->where('group_gid','=',Auth::user()->group_gid)->count();
 
+        $hints = DB::table('roulette')->join('users','users.id', '=','roulette.user_id')
+                    ->join('hints','hints.id','=','roulette.number')
+                    ->distinct()
+                    ->orderBy('roulette.number', 'asc')
+                    ->select('roulette.number' ,'hints.hint')
+                    ->where('roulette.number','<',21)
+                    ->where('group_gid','=',Auth::user()->group_gid)->get();
+
         if($clearflagcnt < 1){
             $clearflag = '';
         }else{
@@ -86,7 +94,12 @@ class questionController extends Controller
         ->select('question_qid')
         ->where('group_gid','=',Auth::user()->group_gid)
         ->get();
+
+        return view('question_hint',['questions'=> $params ,'message' => $msg , 'clearflags' => $clearflag, 'hints'=>$hints]);
+
         }
+
+
 
         return view('question',['questions'=> $params ,'message' => $msg , 'clearflags' => $clearflag]);
     }
