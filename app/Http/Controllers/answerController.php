@@ -20,7 +20,7 @@ class answerController extends Controller
         $answer = $request->answer;
         $uid = Auth::user()->id;
         $gid = Auth::user()->group_gid;
-        $params =  DB::table('questions')->where('lv_lvid','=',1) ->oldest('qid')->get();
+        $params =  DB::table('questions')->get();
         $clearflag = DB::table('ac')->join('users','users.id', '=','ac.user_id')
                     ->select('question_qid')
                     ->where('group_gid','=',Auth::user()->group_gid)->get();
@@ -39,6 +39,7 @@ class answerController extends Controller
                ];
                DB::table('ac')->insert($param);
            $msg = '1';
+           $taso_flag='true';
            $clearflag = DB::table('ac')->join('users','users.id', '=','ac.user_id')
            ->select('question_qid')
            ->where('group_gid','=',Auth::user()->group_gid)->get();
@@ -46,6 +47,8 @@ class answerController extends Controller
            return view('question',['questions'=> $params ,'message' => $msg ,'clearflags' => $clearflag]);
 
            }else{
+                $taso_flag='false';
+
                $msg = '2';
                return view('question',['questions'=> $params ,'message' => $msg, 'clearflags' => $clearflag]);
            }

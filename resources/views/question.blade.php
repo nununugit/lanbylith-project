@@ -38,7 +38,13 @@
           <div class="col mb-4" >
             <div class="card percent flagcori{{ $question-> qid }}" data-toggle="modal" data-target="#exampleModal{{  $question -> qid  }}">
                 <div class="card-body">
-                <h5 class="card-title">{{ $question-> qid }}</h5>
+                <h5 class="card-title">
+                @if(($question-> qid)<21)
+                  Easy
+                @else
+                  Normal
+                @endif
+                </h5>
               <p class="card-text">{{ $question -> title }}</p>
                 </div>
 

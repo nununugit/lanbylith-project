@@ -36,7 +36,7 @@ class sortcontroller extends Controller
         if(([$group_points->gscore])>([$sorted_count])){
             $diff =$group_points->gscore-$sorted_count;
             $msg ='間も無くボールが出てきます。少々お待ちください
-            あと、'.$diff.'回仕分けができます';
+            あと、'.($diff-1).'回仕分けができます';
             $param = [
                 'group_gid' => $group_points ->group_gid,
                 'sort_time' => Carbon::now(),

@@ -36,12 +36,17 @@ class HomeController extends Controller
         return view('qanda',['params' => $params]);
     }
     public function post_qanda(Request $request){
+        if(($request->situmon)==null){
+        return redirect('/home');
+
+        }else{
         $situmon = new situmon();
         $situmon -> user_id = Auth::user()->id;
         $situmon -> situmon = $request -> situmon;
         $situmon -> answer = '未回答';
         $situmon->save();
         return redirect('/home');
+        }
     }
 
 }
