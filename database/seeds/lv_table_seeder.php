@@ -33,7 +33,17 @@ class lv_table_seeder extends Seeder
         ];
         DB::table('lv')->insert($param);
 
+        $param = [
+            'lvname' => 'extra',
+            'score' => '1'
+        ];
+        DB::table('lv')->insert($param);
 
-
+        $param = [
+            'lvname' => 'tutorial',
+            'score' => '0'
+        ];
+        DB::table('lv')->insert($param);
+        
     }
 }

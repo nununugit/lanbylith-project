@@ -39,11 +39,7 @@
             <div class="card percent flagcori{{ $question-> qid }}" data-toggle="modal" data-target="#exampleModal{{  $question -> qid  }}">
                 <div class="card-body">
                 <h5 class="card-title">
-                @if(($question-> qid)<21)
-                  Easy
-                @else
-                  Normal
-                @endif
+                {{ $difficulty }}
                 </h5>
               <p class="card-text">{{ $question -> title }}</p>
                 </div>
@@ -69,8 +65,20 @@
                 </div>
                 <div class="modal-body">
                   <p>{!!  nl2br(e($question -> content))  !!}</p>
+            @if ($difficulty=='hard')
+            @php
+            $count =0;    
+            @endphp
+                @foreach ($hints as $hint )
+                    @if(($hint->number)==(($question->qid)-44))
+                    <p>
+                    ヒント：{{$hint->hint}}
+                    </p>
+                    @endif
+                @endforeach        
+            @endif
                 </div>
-              <form action="{{url('/question/easy')}}" method="post">
+              <form action="{{url('/question/'.$difficulty)}}" method="post">
                 <div class="modal-footer">
                         @csrf
                         <div class="form-group row">

@@ -1,6 +1,7 @@
 @extends('layouts.navbar')
 
 @section('content')
+
 <div class="container">
   @foreach ($newses as $news )
   <div class="card">

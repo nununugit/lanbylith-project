@@ -494,6 +494,10 @@ body {
     left: 25%;
 }
 
+button {
+    transform: translateY(-50%) translateX(40%);
+}
+
 .btn {
     background: green;
     border: 1px solid #000000;
@@ -510,6 +514,8 @@ body {
     color: #fff;
     font-family: 'Roboto', sans-serif;
     border-radius: 3px;
+    position: relative;
+    display: inline-block;
 }
 
 .btn .btn-label {

@@ -19,7 +19,8 @@ class CreateSortTable extends Migration
             $table->integer('group_gid')->unsigned();
             $table->foreign('group_gid')->references('gid')->on('groups');
 
-            $table->dateTime('sort_time');
+            $table->dateTime('request_time');
+            $table->dateTime('sort_time')->nullable();
             $table->boolean('done');
 
             $table->timestamps();

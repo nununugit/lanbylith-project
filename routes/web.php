@@ -33,10 +33,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/qanda', 'HomeController@qanda')->name('qanda');
 Route::post('/home','HomeController@post_qanda');
 //questionのやつ
-Route::get('/question/easy', 'questionController@question_easy');
-Route::get('/question/normal', 'questionController@question_normal');
-Route::get('/question/hard', 'questionController@question_hard');
-Route::post('/question/easy', 'answerController@answer');
+Route::get('/question/{difficulty}', 'questionController@question');
+Route::post('/question/{difficulty}', 'answerController@answer');
 //その他のナビバーシリーズ
 Route::get('/rank', 'rankController@rank');
 Route::get('/roulette','rouletteController@roulette');

@@ -54,9 +54,11 @@
                         </a>
 
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item" href="{{ url('/question/tutorial') }}">tutorial</a>
                           <a class="dropdown-item" href="{{ url('/question/easy') }}">easy</a>
                           <a class="dropdown-item" href="{{ url('/question/normal') }}">normal</a>
                           <a class="dropdown-item" href="{{ url('/question/hard') }}">hard</a>
+                          <a class="dropdown-item" href="{{ url('/question/extra') }}">extra</a>
                         </div>
                 </div>
                 <li class="url3"><a href="{{ url('/rank') }}">Rank</a></li>
