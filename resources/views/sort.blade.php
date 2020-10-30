@@ -16,7 +16,6 @@
     </div>
 
     <div class="sort">
-
         <form method="POST" action="{{ url('api/sort') }}">
             @csrf
                 <button class="btn-loading">
@@ -29,7 +28,7 @@
     </div>
     <div class="jumbotron zone">
         <h2><b>※競技の注意</b></h2>
-        <p>ボタンをしたらチームメイトに知らせて、172.16.11.X:8000に遷移してください</p>
+        <p>ボタンを押したらチームメイトに知らせて、172.16.11.X:8000に遷移してください</p>
         <p>Hard問題は3点、normal問題2点、easy問題1点です。</p>
         <p>1点消費することで、一つボールを運搬することができます。</p>
         <p>他チームとの情報共有を禁止します。</p>

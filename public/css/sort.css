@@ -101,7 +101,7 @@ button {
 
 body {
     background-color: transparent;
-    background-image: radial-gradient(#F48FB1 3px, transparent 3px);
+    background-image: radial-gradient(#00B0F0 3px, transparent 3px);
     background-size: 30px 30px;
     overflow: hidden;
     z-index: 0;
