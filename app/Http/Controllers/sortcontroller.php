@@ -10,9 +10,12 @@ use Illuminate\Support\Facades\DB;
 
 class sortcontroller extends Controller
 {
-    public function sort(){
-        $msg ='';
-        
+       public function __construct()
+        {
+            $this->middleware('auth');
+        }
+
+        public function sort(){
         $group_points =DB::table('gscore')
         ->select('gscore.group_gid','gscore.gscore')
         ->join('groups', 'gscore.group_gid','=','groups.gid')
@@ -30,9 +33,13 @@ class sortcontroller extends Controller
         ->select('done')
         ->where('group_gid','=',Auth::user()->group_gid)
         ->count();
-        $diff =($group_points->gscore) -$sorted_count;
-
-        $msg ='あと、'.($diff).'回仕分けができます';
+        if($group_points==null){
+            $diff='0';
+            $msg='点数が足りません。';
+        }else{
+            $diff =($group_points->gscore) -$sorted_count;
+            $msg ='あと、'.($diff).'回仕分けができます';
+        }
         return view('sort',['msg'=>$msg ,'count'=>$diff]);
     }
 
@@ -54,24 +61,23 @@ class sortcontroller extends Controller
         ->select('done')
         ->where('group_gid','=',Auth::user()->group_gid)
         ->count();
-        $diff =$group_points->gscore-$sorted_count;
-
-        if(([$group_points->gscore])>([$sorted_count])){
+        if($group_points==null){
+            $diff='0';
+            $msg='点数が足りません。';
+        }else if(([$group_points->gscore])>([$sorted_count])){
+            $diff =($group_points->gscore) -$sorted_count-1;
             $msg ='間も無くボールが出てきます。少々お待ちください';
-            $diff-1;
             $param = [
                 'group_gid' => $group_points ->group_gid,
                 'request_time' => Carbon::now(),
                 'done' =>0
             ];
             DB::table('sort')->insert($param);
-        return view('sort',['msg'=>$msg,'count'=>$diff]);
-
         }else{
+            $diff='0';
             $msg='点数が足りません。';
-        return view('sort',['msg'=>$msg ,'count'=>$diff]);
-
         }
+        return view('sort',['msg'=>$msg ,'count'=>$diff]);
 
     }
 

@@ -17,6 +17,6 @@
 
     <a class="situmon" href="{{ route('qanda') }}">よくある質問</a>
     </div>
-        </div>
+    </div>
 </body>
 @endsection

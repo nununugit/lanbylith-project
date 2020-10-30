@@ -35,6 +35,8 @@ class answerController extends Controller
             ->where('roulette.number','<',21)
             ->where('group_gid','=',Auth::user()->group_gid)->get();
         }
+
+
         if(DB::table('ac')->join('users','users.id', '=','ac.user_id')->select('ctime')->whereRaw('group_gid = ? and question_qid = ?', [ $gid ,$qid ])->exists()){
             //無限に点数を入れられないために
             $msg = '3';
@@ -53,15 +55,15 @@ class answerController extends Controller
            $clearflag = DB::table('ac')->join('users','users.id', '=','ac.user_id')
            ->select('question_qid')
            ->where('group_gid','=',Auth::user()->group_gid)->get();
-
-           return view('question',['questions'=> $params ,'message' => $msg ,'clearflags' => $clearflag ,'difficulty' =>$difficulty,'hints'=>$hints]);
-
            }else{
-                $taso_flag='false';
-
+               $taso_flag='false';
                $msg = '2';
-               return view('question',['questions'=> $params ,'message' => $msg, 'clearflags' => $clearflag ,'difficulty' =>$difficulty,'hints'=>$hints]);
            }
+        $taso_controller = app()->make('App\Http\Controllers\tasoController');
+        $user_param = $taso_controller->guzzle_taso($qid,$gid,$taso_flag);
+
+           return view('question',['questions'=> $params ,'message' => $msg, 'clearflags' => $clearflag ,'difficulty' =>$difficulty,'hints'=>$hints]);           
         }
+
     }
 }

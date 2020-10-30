@@ -674,3 +674,7 @@ button {
     font-size: large;
     text-align: center;
 }
+
+.back-blue {
+    background-color: aqua;
+}
