@@ -22,6 +22,8 @@ class CreateUsersTable extends Migration
 
             $table->integer('group_gid')->unsigned();
             $table->foreign('group_gid')->references('gid')->on('groups');
+    
+            $table->integer('ip')->nullable();
 
             $table->rememberToken();
             $table->timestamps();
