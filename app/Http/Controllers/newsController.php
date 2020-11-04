@@ -19,4 +19,9 @@ class newsController extends Controller
     public function news_content($id){
         return view('news_content',['id'->$id]);
     }
+
+    public function test_ip()
+    {
+        return request()->ip();
+    }
 }

@@ -28,11 +28,11 @@ class sortcontroller extends Controller
                 ->groupBy('group_gid');
         })
         ->orderBy('gscore.gscore','desc')->first();
-        
         $sorted_count = DB::table('sort')
         ->select('done')
         ->where('group_gid','=',Auth::user()->group_gid)
         ->count();
+        
         if($group_points==null){
             $diff='0';
             $msg='点数が足りません。';
@@ -78,7 +78,6 @@ class sortcontroller extends Controller
             $msg='点数が足りません。';
         }
         return view('sort',['msg'=>$msg ,'count'=>$diff]);
-
     }
 
 }

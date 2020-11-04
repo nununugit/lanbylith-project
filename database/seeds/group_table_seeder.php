@@ -12,28 +12,27 @@ class group_table_seeder extends Seeder
      */
     public function run()
     {
-
         $param = [
-            'gname' => 'Ateam'
+            'gname' => '✳︎ナノ✳︎'
         ];
         DB::table('groups')->insert($param);
 
         $param = [
-            'gname' => 'Bteam'
+            'gname' => '四等分のモビルスーツ'
         ];
         DB::table('groups')->insert($param);
 
         $param = [
-            'gname' => 'Cteam'
+            'gname' => 'ピザ'
         ];
         DB::table('groups')->insert($param);
         $param = [
-            'gname' => 'Dteam'
+            'gname' => 'STRANGE  DREAM'
         ];
         DB::table('groups')->insert($param);
 
         $param = [
-            'gname' => 'Eteam'
+            'gname' => '狡猾'
         ];
         DB::table('groups')->insert($param);
 

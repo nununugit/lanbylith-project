@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -55,7 +55,6 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
-            'ip'=>\Request::ip(),
         ]);
     }
 
@@ -70,12 +69,13 @@ class RegisterController extends Controller
 
     protected function create(array $data)
     {
+        $ip = Request()->ip();
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'ip'=>\Request::ip(),
             'group_gid' =>$data['gid'],
+            'ip' => DB::raw("inet_aton('$ip')")
         ]);
     }
 }

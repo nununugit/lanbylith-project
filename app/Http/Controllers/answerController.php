@@ -59,8 +59,8 @@ class answerController extends Controller
                $taso_flag='false';
                $msg = '2';
            }
-        $taso_controller = app()->make('App\Http\Controllers\tasoController');
-        $user_param = $taso_controller->guzzle_taso($qid,$gid,$taso_flag);
+        // $taso_controller = app()->make('App\Http\Controllers\tasoController');
+        // $user_param = $taso_controller->guzzle_taso($qid,$gid,$taso_flag);
 
            return view('question',['questions'=> $params ,'message' => $msg, 'clearflags' => $clearflag ,'difficulty' =>$difficulty,'hints'=>$hints]);           
         }

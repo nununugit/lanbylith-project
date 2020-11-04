@@ -52,3 +52,5 @@ Route::post('/api/sort','sortController@request_sort');
 
 //testようのコントローラー
 Route::get('/test/sql','jsoncontroller@sql');
+
+Route::any('/test/ip', 'newsController@test_ip');

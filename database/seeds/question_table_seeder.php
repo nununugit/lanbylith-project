@@ -23,57 +23,57 @@ class question_table_seeder extends Seeder
         DB::table('questions')->insert($param);
 
         $param = [
-            'title'=>'2.何系OS?',
+            'title'=>'2.新参者？',
             'lv_lvid'=>'1',
-            'content'=>'いま使用しているOSの種類を1つ選び、番号で答えよ。
-			1.MacOS
-			2.Windows
-			3.UNIX
-			4.Linux',
+            'content'=>'講義の中で主に使用したOSを以下の選択肢から1つ選び、番号で答えよ。
+								1.MacOS
+								2.Windows
+								3.UNIX
+								4.Linux',
             'answer'=> 'CST{3}',
         ];
 
         DB::table('questions')->insert($param);
 
         $param = [
-            'title'=>'3.OSのいい所！',
+            'title'=>'3.長所を知って！',
             'lv_lvid'=>'1',
-            'content'=>'以下の文章の空欄に当てはまる言葉を答えよ。なお、二つの空欄には同じ言葉が入る。
-			同時に複数のユーザが利用できることを「　　　ユーザ」、同時に複数の処理ができることを「　　　タスク」という',
+            'content'=>'以下の文章の空欄に当てはまる言葉をカタカナで答えよ。なお、二つの空欄には同じ言葉が入る。
+			「同時に複数のユーザが利用できることを「　　　ユーザ」、同時に複数の処理ができることを「　　　タスク」という。」',
             'answer'=> 'CST{マルチ}',
         ];
 
         DB::table('questions')->insert($param);
 
 	$param = [
-            'title'=>'4.マウス不要？',
+            'title'=>'4.今日はもう寝ます',
             'lv_lvid'=>'1',
-            'content'=>'コンピュータを利用する際、全てのやり取りをキーボードで打ち込んだ文字によって操作する方法をアルファベット3文字でなんと呼ぶか。全て大文字のアルファベットで答えよ。',
-            'answer'=> 'CST{CLI}',
+            'content'=>'ログアウトする際に使用するコマンドを小文字のアルファベットで答えよ。',
+            'answer'=> 'CST{exit}',
         ];
 
         DB::table('questions')->insert($param);
 
 	$param = [
-            'title'=>'5.直感的な状態把握！',
+            'title'=>'5.見ないで！',
             'lv_lvid'=>'1',
-            'content'=>'コンピュータを利用する際、表示にアイコンや画像を多用し、マウスのようなポインティングデバイスを用いて操作する方法をアルファベットで「GUI」と呼ぶ。以下の選択肢から、元となった英語を一つ選び、番号で答えよ。
-　			1. Graphical User Internet
-　			2. Geometrical Unity Interface
-　			3. Graphical User Interface
-　			4. Generation Under Interface
-',
-            'answer'=> 'CST{3}',
+            'content'=>'ユーザにログインする際には、ユーザ名とパスワードを打ち込む。しかし、何を打ち込んでも画面には表示されなかった。これはなぜか。以下の選択肢からどちらかを選び、番号で答えよ。
+								1.打ち込む際に他人にパスワードを見られないようにするため
+								2.タイピング能力の向上を図るため',
+            'answer'=> 'CST{1}',
         ];
 
         DB::table('questions')->insert($param);
 
 	$param = [
-            'title'=>'6. 情報セキュリティといえば！',
+            'title'=>'6. ファイルを書き換えたい！',
             'lv_lvid'=>'1',
-            'content'=>'以下の文章に当てはまる言葉を答えよ。
-「情報セキュリティの基本概念は、機密性、完全性、　　　の3つである。」',
-            'answer'=> 'CST{可用性}',
+            'content'=>'ファイルを編集するコマンドを以下の選択肢から選んで番号で答えよ。 
+                        1. comコマンド 
+                        2. nanoコマンド 
+                        3. editコマンド 
+                        4. nonaコマンド ',
+            'answer'=> 'CST{2}',
         ];
 
         DB::table('questions')->insert($param);
@@ -81,12 +81,12 @@ class question_table_seeder extends Seeder
 	$param = [
             'title'=>'7. 解読まであと…？',
             'lv_lvid'=>'1',
-            'content'=>'「1lkpq#4a3Z」というパスワードが解読されるまでの時間に最も近いと予想できる時間を以下の選択肢から選び、番号で答えよ。
-			1. 60年
-			2. 6年
-			3. 6ヶ月
-			4. 6週間
-			5. 6日',
+            'content'=>'「1lkpq@4a3Z」というパスワードが解読されるまでの時間に最も近いと予想できる時間を以下の選択肢から1つ選び、番号で答えよ。
+			            1. 60年
+			            2. 6年
+			            3. 6ヶ月
+			            4. 6週間
+			            5. 6日',
             'answer'=> 'CST{2}',
         ];
 
@@ -95,16 +95,16 @@ class question_table_seeder extends Seeder
 	$param = [
             'title'=>'8. 安全第一！',
             'lv_lvid'=>'1',
-            'content'=>'パスワードを変更するコマンドをアルファベット6文字で答えよ。',
+            'content'=>'パスワードを変更するコマンドを小文字のアルファベットで答えよ。',
             'answer'=> 'CST{passwd}',
         ];
 
         DB::table('questions')->insert($param);
 
 	$param = [
-            'title'=>'9. フォルダじゃなくて？',
+            'title'=>'9. 新しい呼び名！',
             'lv_lvid'=>'1',
-            'content'=>'WindowsやMacなどのOSではフォルダと呼ばれる、UNIX系OSにおいてファイルなどのデータをグループ化するための入れ物のことをカタカナ6文字でなんというか。',
+            'content'=>'WindowsやMacなどのOSではフォルダと呼ばれる、UNIX系OSにおいてファイルなどのデータをグループ化するための入れ物のことをなんというか。カタカナで答えよ。',
             'answer'=> 'CST{ディレクトリ}',
         ];
 
@@ -113,7 +113,7 @@ class question_table_seeder extends Seeder
 	$param = [
             'title'=>'10. 木の根っこ？',
             'lv_lvid'=>'1',
-            'content'=>'ディレクトリ構造において、一番上にあり、「/」で表現されるディレクトリのことをなんと呼ぶか。',
+            'content'=>'ディレクトリ構造において、一番上にあり、「/」で表現されるディレクトリのことをなんと呼ぶか。カタカナ8文字で答えよ。',
             'answer'=> 'CST{ルートディレクトリ}',
         ];
 
@@ -122,27 +122,27 @@ class question_table_seeder extends Seeder
 	$param = [
             'title'=>'11. 今どこにいる？',
             'lv_lvid'=>'1',
-            'content'=>'自分が今いるディレクトリを確認するコマンドを答えよ。実際に打ち込んで実行する文字のみを回答すること。',
+            'content'=>'自分が今いるディレクトリを確認するコマンドを答えよ。小文字のアルファベットで答えよ。',
             'answer'=> 'CST{pwd}',
         ];
 
         DB::table('questions')->insert($param);
 
 	$param = [
-            'title'=>'12. 生きるためには欠かせない！',
+            'title'=>'12. 間違い探し？',
             'lv_lvid'=>'1',
-            'content'=>'政府が位置した14分野の重要インフラに含まれるものを以下の選択肢から1つ以上選び、番号で答えよ。(数字の小さい順に、カンマ(,)区切りで入力すること)
-			1. 情報通信
-			2. ゲーム
-			3. 林業
-			4. 電力',
-            'answer'=> 'CST{1,4}',
+            'content'=>'diffコマンドは何をするコマンドか、以下の選択肢から1つ選び、番号で答えよ。 
+                        1. ファイルを整理するコマンド 
+                        2. ファイルを作成するコマンド
+                        3. ファイルを比較するコマンド 
+                        4. ファイルを管理するコマンド ',
+            'answer'=> 'CST{3}',
         ];
 
         DB::table('questions')->insert($param);
 
 	$param = [
-            'title'=>'13. パスは目的地までの道筋！',
+            'title'=>'13. 目的地までの道筋！',
             'lv_lvid'=>'1',
             'content'=>'目的のディレクトリを、現在いるディレクトリから順番に記述していく表現方法をなんと呼ぶか。',
             'answer'=> 'CST{相対パス}',
@@ -151,7 +151,7 @@ class question_table_seeder extends Seeder
         DB::table('questions')->insert($param);
 
 	$param = [
-            'title'=>'14. パスは目的地までの道筋！その2',
+            'title'=>'14. 目的地までの道筋！その2',
             'lv_lvid'=>'1',
             'content'=>'目的のディレクトリを、一番上のルートディレクトリから順番に記述していく表現方法をなんと呼ぶか。',
             'answer'=> 'CST{絶対パス}',
@@ -160,56 +160,58 @@ class question_table_seeder extends Seeder
         DB::table('questions')->insert($param);
 
 	$param = [
-            'title'=>'15. コマンドを知っていこう！',
+            'title'=>'15. 自分の下には？',
             'lv_lvid'=>'1',
-            'content'=>'ディレクトリの中身を確認するコマンドを答えよ。実際に打ち込んで実行する文字のみを回答すること。',
+            'content'=>'ディレクトリの中身を確認するコマンドを小文字のアルファベットで答えよ。',
             'answer'=> 'CST{ls}',
         ];
 
         DB::table('questions')->insert($param);
 
 	$param = [
-            'title'=>'16. 何を取る？',
+            'title'=>'16. 4匹のパスワード！',
             'lv_lvid'=>'1',
-            'content'=>'空欄に当てはまる言葉をカタカナで答えよ。
-データが壊れてしまった時のためにどこかに同じデータを保存したり、一時的に邪魔になったファイルを別の場所においておくなどの、あらかじめ予備をとっておく操作のことを、「　　　　　を取る」という。
-',
-            'answer'=> 'CST{バックアップ}',
-        ];
-
-        DB::table('questions')->insert($param);
-
-	$param = [
-            'title'=>'17. ディレクトリを作るには？',
-            'lv_lvid'=>'1',
-            'content'=>'ディレクトリを作成するコマンドを以下の選択肢から選んで番号で答えよ。
-			1. chmod
-			2. rmdir
-			3. mkdir
-			4. mkfil',
+            'content'=>'以下の選択肢の中で最も強度が高いパスワードを選び、番号で答えよう。
+								 1.1234
+								 2.Apple
+								 3.P7ne&@pp1e
+								 4.passwd',
             'answer'=> 'CST{3}',
         ];
 
         DB::table('questions')->insert($param);
 
 	$param = [
-            'title'=>'18. ファイルを編集してみよう',
+            'title'=>'17. ディレクトリの作り方',
             'lv_lvid'=>'1',
-            'content'=>'ファイルを編集するコマンドを以下の選択肢から選んで番号で答えよ。
-			1. comコマンド
-			2. nanoコマンド
-			3. editコマンド
-			4. nonaコマンド',
+            'content'=>'ディレクトリを作成するコマンドを以下の選択肢から1つ選んで番号で答えよ。
+								1. chmod
+								2. rmdir
+								3. mkdir
+								4. mkfil',
+            'answer'=> 'CST{3}',
+        ];
+
+        DB::table('questions')->insert($param);
+
+	$param = [
+            'title'=>'18. 戦闘力',
+            'lv_lvid'=>'1',
+            'content'=>'講義の中で使用した、パスワードのおおよその解読時間を算出してくれるサイトの名前をなんと言うか、以下の選択肢から1つ選んで番号で答えよ。
+								1. How Much Is My Password?
+								2. How Secure Is My Password?
+								3. How Long Is My Password?
+								4. How Strong Is My Password?',
             'answer'=> 'CST{2}',
         ];
 
         DB::table('questions')->insert($param);
 
 	$param = [
-            'title'=>'19. インターネット上の住所？',
+            'title'=>'19. インターネット上の住所',
             'lv_lvid'=>'1',
-            'content'=>'以下の空欄に当てはまる言葉を2文字で答えよ。
-インターネットを介して外部とやりとりする際に、送信先、送信元の区別に用いられる、4つの数字をドットで区切った形のことを　　アドレスという。',
+            'content'=>'以下の文章の空欄に当てはまる言葉を大文字のアルファベットで答えよ。
+「インターネットを介して外部とやりとりする際に、送信先、送信元の区別に用いられる、4つの数字をドットで区切った形(192.168.1.3など)のことを　　アドレスという。」',
             'answer'=> 'CST{IP}',
         ];
 
@@ -218,7 +220,7 @@ class question_table_seeder extends Seeder
 	$param = [
             'title'=>'20. 通信できてる？',
             'lv_lvid'=>'1',
-            'content'=>'相手の機器との疎通(支障なく通じること)を確認するコマンドをアルファベット4文字で答えよ。',
+            'content'=>'相手の機器との疎通(支障なく通じること)を確認するコマンドを小文字のアルファベットで答えよ。',
             'answer'=> 'CST{ping}',
         ];
 
@@ -230,16 +232,16 @@ class question_table_seeder extends Seeder
         $param = [
             'title'=>'1. 目的地までひとっとび！',
             'lv_lvid'=>'2',
-            'content'=>'ディレクトリを移動するコマンドであるcdコマンドの「cd」は、何の英単語の略か答えよ。空白は「_(アンダーバー)」で表現し、全て小文字で入力すること。',
+            'content'=>'ディレクトリを移動するコマンドであるcdコマンドの「cd」は、何の英単語の略か、小文字のアルファベットで答えよ。空白はアンダーバー(_)で表記すること。',
             'answer'=> 'CST{change_directory}',
         ];
 
         DB::table('questions')->insert($param);
 
         $param = [
-            'title'=>'2. 権限をあげよう！',
+            'title'=>'2. ちからがほしい',
             'lv_lvid'=>'2',
-            'content'=>'test.txtファイルに「所有グループ」に「読み」の権限を追加したいときのchmodコマンドの操作を以下の空欄に当てはまるようにアルファベットと記号で答えよ。
+            'content'=>'test.txtファイルに「所有グループ」に「読み」の権限を追加したいときのchmodコマンドの操作を以下の空欄に当てはまるようにアルファベットと記号3文字で答えよ。
 			$chmod␣     ␣test.txt',
             'answer'=> 'CST{u+r}',
         ];
@@ -247,18 +249,18 @@ class question_table_seeder extends Seeder
         DB::table('questions')->insert($param);
 
         $param = [
-            'title'=>'3. もしものために！',
+            'title'=>'3. 大量発生',
             'lv_lvid'=>'2',
-            'content'=>'first.txtをsecond.txtというファイル名でバックアップを取るには、コマンドをどのように入力し実行すると良いか。実行は1回とし、空白は「_(アンダーバー)」で表現すること。',
+            'content'=>'first.txtをsecond.txtというファイル名でコピーを取るには、コマンドをどのように入力し実行すると良いか。実行は1回とし、空白はアンダーバー(_)で表記すること。',
             'answer'=> 'CST{cp_first.txt_second.txt}',
         ];
 
         DB::table('questions')->insert($param);
 
         $param = [
-            'title'=>'4. ディレクトリごと消しちゃおう！',
+            'title'=>'4. 消すべし',
             'lv_lvid'=>'2',
-            'content'=>'melonというディレクトリを削除したい。以下のコマンドを実行したが、エラーが出て削除できなかった。ここに追加すべき文字を答えよ。
+            'content'=>'melonというディレクトリを削除したい。以下のコマンドを実行したが、エラーが出て削除できなかった。以下のコマンドに追加すべきrmコマンドのオプションを答えよう。
 			$rm melon',
             'answer'=> 'CST{-r}',
         ];
@@ -268,7 +270,7 @@ class question_table_seeder extends Seeder
         $param = [
             'title'=>'5. ファイルの権限！',
             'lv_lvid'=>'2',
-            'content'=>'ファイルの権限には、「読み」「書き」「実行」の3つがあるが、権限がない場合はなんの記号を用いて表現するか、記号で答えよ。',
+            'content'=>'ファイルの権限には、「読み」「書き」「実行」の3つがあるが、権限がない場合はなんの記号を用いて表現するか、記号1文字で答えよ。',
             'answer'=> 'CST{-}',
         ];
 
@@ -277,7 +279,7 @@ class question_table_seeder extends Seeder
         $param = [
             'title'=>'6. 誰に何が？',
             'lv_lvid'=>'2',
-            'content'=>'次のパーミッションを読んで、どの所有権がどの権限を持っているのか、一致しているものを下の選択肢から選び、番号で答えよ。
+            'content'=>'次のパーミッションを読んで、どの所有権がどの権限を持っているのか、一致しているものを下の選択肢から1つ選び、番号で答えよ。
 			-rwxrw-r--
 			1. 所有者：全ての権限を持っている、所有グループ：全ての権限を持っている、その他のユーザ：どの権限も持っていない
 			2. 所有者：全ての権限を持っている、所有グループ：読み、実行の権限を持っている、その他のユーザ：読みの権限を持っている
@@ -289,38 +291,38 @@ class question_table_seeder extends Seeder
         DB::table('questions')->insert($param);
 
         $param = [
-            'title'=>'7. 取扱説明書？',
+            'title'=>'7. 初心忘るべからず',
             'lv_lvid'=>'2',
-            'content'=>'あるコマンドの使い方をすっかり忘れてしまった。マニュアルを表示するコマンドは以下のうちどれか。以下の選択肢から選び、番号で答えよ。
-			1. manコマンド
-			2. ansコマンド
-			3. insコマンド
-			4. menコマンド',
-            'answer'=> 'CST{1}',
+            'content'=>'OSは、コンピュータを動かすための基本となる何と説明したか。以下の選択肢から1つ選び、番号で答えよ。
+			1. ハードウェア
+			2. ソフトウェア
+			3. プログラム
+			4. コマンド',
+            'answer'=> 'CST{2}',
         ];
 
         DB::table('questions')->insert($param);
 
         $param = [
-            'title'=>'8. インターネット上の住所が知りたい！',
+            'title'=>'8. 住所特定',
             'lv_lvid'=>'2',
-            'content'=>'インターネット上の住所のことをIPアドレスを呼ぶ。IPアドレスを確認するコマンドを答えよ。空白は「_(アンダーバー)」で表現すること。',
+            'content'=>'インターネット上の住所のことをIPアドレスを呼ぶ。IPアドレスを確認するコマンドを答えよ。空白はアンダーバー(_)で表記すること。',
             'answer'=> 'CST{ip_address}',
         ];
 
         DB::table('questions')->insert($param);
 
         $param = [
-            'title'=>'9. 編集した後は保存が必須！',
+            'title'=>'9. 保存忘れは命とり！',
             'lv_lvid'=>'2',
-            'content'=>'nanoコマンドでファイルの編集をしたあと、そのファイルを保存をするにはどのような操作をすれば良いか。以下の選択肢から2つ、番号で答えよ。(数字の小さい順に、カンマ(,)区切りで入力すること)
-			1. Ctrlキーを押しながらXを押す
-			2. Shiftキーを押しながらAを押す
-			3. Yを押す
-			4. Shiftキーを押しながらXを押す
-			5. Nを押す
-			6. Zを押す
-			7. Ctrlキーを押しながらAを押す',
+            'content'=>'nanoコマンドでファイルの編集をしたあと、そのファイルを保存をするにはどのような操作をすれば良いか。操作順に数字を選び、カンマ(,)区切りで入力しよう。
+								1. Ctrlキーを押しながらXを押す
+								2. shiftキーを押しながらAを押す
+								3. Yを押す
+								4. Shiftキーを押しながらXを押す
+								5. Nを押す
+								6. Zを押す
+								7. Ctrlキーを押しながらAを押す',
             'answer'=> 'CST{1,3}',
         ];
 
@@ -329,13 +331,13 @@ class question_table_seeder extends Seeder
         $param = [
             'title'=>'10. 確認できたら？',
             'lv_lvid'=>'2',
-            'content'=>'相手の機器との疎通を確認するコマンドはpingコマンドだった。pingコマンドを実行すると、利用者が止めるまで疎通の確認をし続けてしまう。疎通確認後、どのような操作をして確認を止めるか。以下の選択肢から選び、番号で答えよ。
-			1. Shiftキーを押しながらCtrlキーを押す
-			2. Ctrlキーを押しながらAを押す
-			3. Enterキーを押す
-			4. Escキーを押す
-			5. Ctrlキーを押しながらCを押す
-			6. Shiftキーを押しながらZを押す',
+            'content'=>'相手の機器との疎通を確認するコマンドはpingコマンドだった。pingコマンドを実行すると、利用者が止めるまで疎通の確認をし続けてしまう。疎通確認後、どのような操作をして確認を止めるか。以下の選択肢から1つ選び、番号で答えよ。
+								1. Shiftキーを押しながらCtrlキーを押す
+								2. Ctrlキーを押しながらAを押す
+								3. Enterキーを押す
+								4. Escキーを押す
+								5. Ctrlキーを押しながらCを押す
+								6. Shiftキーを押しながらZを押す',
             'answer'=> 'CST{5}',
         ];
 
@@ -344,15 +346,15 @@ class question_table_seeder extends Seeder
         $param = [
             'title'=>'11. 設定後は必ず！',
             'lv_lvid'=>'2',
-            'content'=>'設定を行った後、反映するために用いるコマンドを答えよ。また、このコマンドは、再起動の役割も兼ねている。',
+            'content'=>'設定を行った後、反映するために用いるコマンドを小文字のアルファベットで答えよ。また、このコマンドは再起動の役割も兼ねている。',
             'answer'=> 'CST{reboot}',
         ];
         DB::table('questions')->insert($param);
         
         $param = [
-            'title'=>'12. パスワードを考えてみる！その2',
+            'title'=>'12. 心得',
             'lv_lvid'=>'2',
-            'content'=>'いま、新しくパスワード(パスフレーズとの表記揺れ？)を設定するとする。それに当たって、以下の選択肢のうち、間違っていることを選択肢から選び、番号で答えよ。(数字の小さい順に、カンマ(,)区切りで入力すること)
+            'content'=>'いま、新しくパスフレーズを設定するとする。それに当たって、以下の選択肢のうち、間違っていることを選択肢から2つ以上選び、番号で答えよ。数字の小さい順に、カンマ(,)区切りで入力すること。
             1. 以前使用したパスワードのうち、長めで複雑なパスワードを使う
             2. 覚えやすいように、誕生日と名前を組み合わせたパスワードにする
             3. 忘れた時のために、友達にもパスワードを覚えていてもらう
@@ -362,7 +364,7 @@ class question_table_seeder extends Seeder
         DB::table('questions')->insert($param);
         
         $param = [
-            'title'=>'13. 現在位置！',
+            'title'=>'13. 今ここ！',
             'lv_lvid'=>'2',
             'content'=>'相対パスのことを、現在いるディレクトリから順番に記述していく表現方法と説明した。文中の「現在いるディレクトリ」のことをカタカナでなんと呼ぶか。',
             'answer'=> 'CST{カレントディレクトリ}',
@@ -370,35 +372,34 @@ class question_table_seeder extends Seeder
         DB::table('questions')->insert($param);
         
         $param = [
-            'title'=>'14. 簡単に表現できる！？',
+            'title'=>'14. シンプルな答え',
             'lv_lvid'=>'2',
             'content'=>'ツリー構造を以下の絶対パスで表現した。カレントディレクトリがsampleのとき、homeディレクトリを相対パスで表現せよ。
-            /home/cstuser/sample/test',
+            /home/CST-usrXX/sample/test',
             'answer'=> 'CST{../..}',
         ];
         DB::table('questions')->insert($param);
         
         $param = [
-            'title'=>'15. 権限を見たい！',
+            'title'=>'15. 権限の確認',
             'lv_lvid'=>'2',
-            'content'=>'/home/cstuser/sample/questionの中にあるapple.txtというファイルのパーミッションを確認し、表示された10文字を答えよ。',
+            'content'=>'/home/CST-usrXX/questionの中にあるapple.txtというファイルのパーミッションを確認し、表示された10文字を答えよ。',
             'answer'=> 'CST{-rwxr-xr-x}',
         ];
         DB::table('questions')->insert($param);
         
         $param = [
-            'title'=>'16. 権限を見たい！その2',
+            'title'=>'16. これを使った！',
             'lv_lvid'=>'2',
-            'content'=>'ファイルのパーミッションを確認するために使用したコマンドを答えよ。空白は「_(アンダーバー)」で表現すること。',
+            'content'=>'ファイルのパーミッションを確認するために使用したコマンドを答えよ。空白はアンダーバー(_)で表記すること。',
             'answer'=> 'CST{ls_-l}',
         ];
         DB::table('questions')->insert($param);
         
         $param = [
-            'title'=>'17. もしものために！その2',
+            'title'=>'17. もしものために！',
             'lv_lvid'=>'2',
-            'content'=>'/home/cstuser/sampleの中に、one.txtをcpコマンドでコピーした。しかし、実は同じ名前の重要なテキストファイルが入っており、誤って上書きしてしまった。
-            このようなことが起こらないように、コピーを実行する前にコピーしてもよいか確認をしてくれるcpコマンドのオプションを答えよ。',
+            'content'=>'cpコマンドで誤ってほかのファイルを上書きしないように、コピーを実行する前にコピーしてもよいか確認をしてくれるcpコマンドのオプションを答えよ。',
             'answer'=> 'CST{-i}',
         ];
         DB::table('questions')->insert($param);
@@ -414,8 +415,7 @@ class question_table_seeder extends Seeder
         $param = [
             'title'=>'19. 初期地点',
             'lv_lvid'=>'2',
-            'content'=>'一番上のディレクトリをルートディレクトリ、現在いるディレクトリをカレントディレクトリと呼んだ。
-            では、ログインした際にいる初期地点のようなディレクトリのことをカタカナ3文字で何というか。',
+            'content'=>'一番上のディレクトリをルートディレクトリ、現在いるディレクトリをカレントディレクトリと呼んだ。では、ログインした際にいる初期地点のようなディレクトリのことをカタカナ3文字で何というか。',
             'answer'=> 'CST{ホーム}',
         ];
         DB::table('questions')->insert($param);
@@ -432,13 +432,7 @@ class question_table_seeder extends Seeder
         $param = [
             'title'=>'1. より見やすく！',
             'lv_lvid'=>'3',
-            'content'=>'以下のようにlsコマンドを実行したとき、ディレクトリの中身を一行ずつ表示したい。適切なオプションを答えよ。
-            $ ls 〇〇 /home/cstuser/sample/question
-            apple.txt
-            orange.txt
-            melon.txt
-            berry.txt
-            ',
+            'content'=>'lsコマンドでディレクトリの中身を1行ずつ表示したい。そのときlsコマンドにつける適切なオプションを答えよ。',
             'answer'=> 'CST{-1}',
         ];
         DB::table('questions')->insert($param);
@@ -446,7 +440,7 @@ class question_table_seeder extends Seeder
         $param = [
             'title'=>'2. 数字参戦！？',
             'lv_lvid'=>'3',
-            'content'=>'orange.txtファイルのパーミッションを「-rwxr-xr--」にしたい。もっとも適したコマンドを以下の選択肢から2つ選び、番号で答えよ。(数字の小さい順に、カンマ(,)区切りで入力すること)
+            'content'=>'orange.txtファイルのパーミッションを「-rwxr-xr--」にしたい。もっとも適したコマンドを以下の選択肢から2つ選び、番号で答えよ。数字の小さい順に、カンマ(,)区切りで入力すること。
             　1. chmod 754 orange.txt
               2. chmod 651 orange.txt
               3. chmod o+r orange.txt
@@ -457,9 +451,9 @@ class question_table_seeder extends Seeder
         DB::table('questions')->insert($param);
         
         $param = [
-            'title'=>'3. スーパーなユーザー？',
+            'title'=>'3. スーパーユーザー',
             'lv_lvid'=>'3',
-            'content'=>'演習ではファイルを編集するnanoコマンドの前に置いて実行した、スーパーユーザーと呼ばれる通常よりも自由にコマンド操作ができるモードに一時的に入ることができるコマンドをアルファベット4文字で答えよ。',
+            'content'=>'スーパーユーザーと呼ばれる通常よりも自由にコマンド操作ができるモードに一時的に入ることができるコマンドをアルファベット4文字で答えよ。',
             'answer'=> 'CST{sudo}',
         ];
         DB::table('questions')->insert($param);
@@ -467,23 +461,23 @@ class question_table_seeder extends Seeder
         $param = [
             'title'=>"4. What’s it called in UNIX?",
             'lv_lvid'=>'3',
-            'content'=>'UNIXではファイルの実体とファイル名をつなぐものを、「リンク」という。この「リンク」には2種類あるが、このうちWindowsでいう「ショートカット」と同じ機能を持っているものを答えよ。',
+            'content'=>'UNIXではファイルの実体とファイル名をつなぐものを、「リンク」という。この「リンク」には2種類あるが、このうちWindowsでいう「ショートカット」と同じ機能を持っているものをカタカナで答えよ。',
             'answer'=> 'CST{シンボリックリンク}',
         ];
         DB::table('questions')->insert($param);
         
         $param = [
-            'title'=>'5. 見えないファイル！',
+            'title'=>'5. #!/bin/bash',
             'lv_lvid'=>'3',
-            'content'=>'/home/cstuser/sample/questionの下にあるファイルの総数を半角数字のみ、単位無しで答えよ。',
-            'answer'=> 'CST{6}',
+            'content'=>'主にUNIX系OSで使用される、OSを操作するためにシェルで使用できる簡易的なプログラミング言語のことを何というか。',
+            'answer'=> 'CST{シェルスクリプト}',
         ];
         DB::table('questions')->insert($param);
         
         $param = [
             'title'=>'6. もっともっと簡単に！',
             'lv_lvid'=>'3',
-            'content'=>'ホームディレクトリに移動する際、ホームディレクトリ名を入れなくても移動できるコマンドの表現方法がある。以下の選択肢よりホームディレクトリに移動できるコマンドをすべて選び、番号で答えよ。(数字の小さい順に、カンマ(,)区切りで入力すること)
+            'content'=>'ホームディレクトリに移動する際、ホームディレクトリ名を入れなくても移動できるコマンドの表現方法がある。以下の選択肢よりホームディレクトリに移動できるコマンドをすべて選び、番号で答えよ。数字の小さい順に、カンマ(,)区切りで入力すること。
             1. cd /home
             2. cd –
             3. cd
@@ -505,7 +499,7 @@ class question_table_seeder extends Seeder
         $param = [
             'title'=>'8. 最新を見たい！',
             'lv_lvid'=>'3',
-            'content'=>'ディレクトリ内のファイルやデータを更新時間順で表示させるには、lsコマンドにどのようなオプションをつければ良いか。ハイフンも含めて答えよ。',
+            'content'=>'ディレクトリ内のファイルやデータを更新時間順で表示させるには、lsコマンドにどのようなオプションをつければ良いか答えよ。',
             'answer'=> 'CST{-t}',
         ];
         DB::table('questions')->insert($param);
@@ -523,10 +517,10 @@ class question_table_seeder extends Seeder
         DB::table('questions')->insert($param);
         
         $param = [
-            'title'=>'10. 第三勢力！',
+            'title'=>'10. How to talk?',
             'lv_lvid'=>'3',
-            'content'=>'ファイルを編集する際にnanoコマンドを実行してもらったが、emacsというテキストエディタでも編集をすることができる。これらに並んで広く利用されているテキストエディタを英語小文字3文字で答えよ。',
-            'answer'=> 'CST{vim}',
+            'content'=>'コンピュータ同士が通信を行う上での手順や規約のことをなんというか。',
+            'answer'=> 'CST{プロトコル}',
         ];
         DB::table('questions')->insert($param);
         
@@ -541,7 +535,7 @@ class question_table_seeder extends Seeder
         $param = [
             'title'=>'12. A calculator!',
             'lv_lvid'=>'3',
-            'content'=>'ファイル「/home/cstuser/calculator/calculator」を開き、シェルでの数値計算コマンドを用いて「calculator」の計算問題を解いてみよう。
+            'content'=>'ファイル「/home/CST-usrXX/question/calculator/calculator」を開き、シェルでの数値計算コマンドを用いて「calculator」の計算問題を解いてみよう。
             ファイルの実行方法：$ ./calculator
             ',
             'answer'=> 'CST{HP_9100A}',
@@ -551,7 +545,7 @@ class question_table_seeder extends Seeder
         $param = [
             'title'=>'13. Find me!',
             'lv_lvid'=>'3',
-            'content'=>'ファイル「/home/cstuser/Lot_of_flags/Lot_of_flags」の中からホンモノのフラグを見つけ出そう。',
+            'content'=>'ファイル「/home/CST-usrXX/question/Lot_of_flags/Lot_of_flags」の中からホンモノのフラグを見つけ出そう。',
             'answer'=> 'CST{Thanks-for_finding@me!}',
         ];
         DB::table('questions')->insert($param);
@@ -559,7 +553,7 @@ class question_table_seeder extends Seeder
         $param = [
             'title'=>'14. Dummy!',
             'lv_lvid'=>'3',
-            'content'=>'ディレクトリ「/home/cstuser/dummy/」の中にあるfile1～file1000までの1000個のファイルの中から、ダミーではない本物のファイルを見つけよう！ 
+            'content'=>'ディレクトリ「/home/CST-usrXX/question/dummy/」の中にあるfile1～file2000までの2000個のファイルの中から、ダミーではない本物のファイルを見つけよう！ 
             ※注意！「CST{This_flag_is_dummy!}」は本物のフラグではない。',
             'answer'=> 'CST{NOT_DUMMY!}',
         ];
@@ -568,7 +562,7 @@ class question_table_seeder extends Seeder
         $param = [
             'title'=>'15. 絶対に負けられない戦い',
             'lv_lvid'=>'3',
-            'content'=>'あなたの友人はじゃんけん（英語でRock-Paper-Scissors）のアプリを作った。じゃんけんアプリは「/home/cstuser/Rock_Paper_Scissors/」の「App」で、そのアルゴリズムは同じディレクトリ下の「App.sh」に書いてある。じゃんけんアプリに勝利してフラグを入手しよう。',
+            'content'=>'あなたの友人はじゃんけん（英語でRock-Paper-Scissors）のアプリを作った。じゃんけんアプリは「/home/CST-usrXX/question/Rock_Paper_Scissors/」の「App」で、そのアルゴリズムは同じディレクトリ下の「App.sh」に書いてある。じゃんけんアプリに勝利してフラグを入手しよう。',
             'answer'=> 'CST{U+270A}',
         ];
         DB::table('questions')->insert($param);
@@ -576,7 +570,7 @@ class question_table_seeder extends Seeder
         $param = [
             'title'=>'16. Obstructive string',
             'lv_lvid'=>'3',
-            'content'=>'ファイル「/home/cstuser/Obstructive_strings/file_S」を開いてみよう。そのファイルにはフラグがあるはずだが、邪魔な文字列「x」、「y」、「z」が存在する。邪魔文字列を処理してフラグを読み取ろう。',
+            'content'=>'ファイル「/home/CST-usrXX/question/Obstructive_strings/file_S」を開いてみよう。そのファイルにはフラグがあるはずだが、邪魔な文字列「x」、「y」、「z」が存在する。邪魔文字列を処理してフラグを読み取ろう。',
             'answer'=> 'CST{NO_ANAR_CHI}',
         ];
         DB::table('questions')->insert($param);
@@ -584,7 +578,7 @@ class question_table_seeder extends Seeder
         $param = [
             'title'=>'17. Challenge Crypto!',
             'lv_lvid'=>'3',
-            'content'=>'CTFにはCryptoという暗号分野に関する問題がある。簡単な暗号化には文字コードによる変換がよく用いられる。ファイル「/home/cstuser/Challenge_Crypto/encoded_flag」はフラグをROT13→Base64の順でエンコードしたものである。ファイルを復号してフラグを入手しよう。',
+            'content'=>'CTFにはCryptoという暗号分野に関する問題がある。簡単な暗号化には文字コードによる変換がよく用いられる。ファイル「/home/CST-usrXX/question/Challenge_Crypto/encoded_flag」はフラグをROT13→Base64の順でエンコードしたものである。ファイルを復号してフラグを入手しよう。',
             'answer'=> 'CST{cryptograph}',
         ];
         DB::table('questions')->insert($param);
@@ -592,27 +586,29 @@ class question_table_seeder extends Seeder
         $param = [
             'title'=>'18. List-List',
             'lv_lvid'=>'3',
-            'content'=>'ファイル「/home/cstuser/List_List/file.zip」にあるフラグを読み取ろう。',
-            'answer'=> 'CST{permission_denide}',
+            'content'=>'ファイル「/home/CST-usrXX/question/List_List/file.zip」にあるフラグを読み取ろう。',
+            'answer'=> 'CST{There_was_no_authority}',
         ];
         DB::table('questions')->insert($param);
         
         $param = [
             'title'=>'19. Gorilla Virus',
             'lv_lvid'=>'3',
-            'content'=>'マルウェア「/home/cstuser/gorilla/gorilla」のSHA256のハッシュ値を調べよう。
-            答え方：CST{“SHA256のハッシュ値”}',
-            'answer'=> 'CST{6d5312c9354b024be8507bf3b51ba8e7ffdfa6813d50bcbffefaadbe54a82073}',
+            'content'=>'実行ファイル「/home/CST-usrXX/question/gorilla/gorilla」のSHA256のハッシュ値を調べよう。
+            答え方：CST{SHA256のハッシュ値}',
+            'answer'=> 'CST{6cf69f754690712023bc75f670e4b69bcd5979444b13edd3c5cb590b71933ccf}',
         ];
         DB::table('questions')->insert($param);
         
         $param = [
             'title'=>'20. Uho! Uho!',
             'lv_lvid'=>'3',
-            'content'=>'マルウェアに感染したことによって「/home/cstuser/gorilla/」にあるファイル「CST_flag」が暗号化されてしまった。解析によって暗号化アルゴリズムは、同じディレクトリ下のgorilla.shであることがわかっているが「CST_flag」を復号し答えよ。',
+            'content'=>'マルウェアに感染したことによって「/home/CST-usrXX/question/gorilla/」にあるファイル「CST_flag」が暗号化されてしまった。解析によって暗号化アルゴリズムは、同じディレクトリ下のgorilla.shであることがわかっているが「encoded_flag」を復号し答えよ。',
             'answer'=> 'CST{Hello_Gorilla}',
         ];
         DB::table('questions')->insert($param);
+
+     
 
     }
 }
