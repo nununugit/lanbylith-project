@@ -14,6 +14,9 @@ class questionController extends Controller
 
     public function question($difficulty)
     {
+        //今追加したよ
+        // return Auth::user()->name;
+
         $msg = '';
         $params =  DB::table('questions')->join('lv','lv.lvid', '=','questions.lv_lvid')
         ->where('lv.lvname','=',$difficulty) ->oldest('qid')->get();
@@ -44,5 +47,3 @@ class questionController extends Controller
         return view('question',['questions'=> $params ,'message' => $msg , 'clearflags' => $clearflag,'difficulty'=>$difficulty,'hints'=>$hints]);
     }    
 }
-   
-

@@ -19,7 +19,7 @@ class user_table_seeder extends Seeder
                 'name' => 'anuma',
                 'email' => $email,
                 'password' => bcrypt('password'),
-                'group_gid' => $count++
+                'group_gid' => $count++,
             ]);
         }
     }

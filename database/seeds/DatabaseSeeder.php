@@ -13,9 +13,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(group_table_seeder::class);
         $this->call(lv_table_seeder::class);
-        // $this->call(user_table_seeder::class);
+        $this->call(user_table_seeder::class);
         $this->call(hints_table_seeder::class);
         $this->call(question_tutorial_seeder::class);
-        // $this->call(question_table_seeder::class);
+        $this->call(question_table_seeder::class);
     }
 }
