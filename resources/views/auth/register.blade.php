@@ -60,18 +60,6 @@
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
                             </div>
                         </div>
-
-                        <div class='form-group row'>
-                            <label for="gid" class="col-md-4 col-form-label text-md-right">{{__('Team')}}</label>
-
-                            <div class="col-md-6">
-                            <select name="gid" id="gid" required autocomplete="gid" size="3">
-                                @foreach ($items as $item)
-                                <option value="{{ $item->gid }}">{{ $item -> gname }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                        </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
