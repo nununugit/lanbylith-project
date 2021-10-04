@@ -13,13 +13,11 @@ class user_table_seeder extends Seeder
     public function run()
     {
         $count=1;
-        $emails = ['a@a','a@b', 'a@c','a@d','a@e'];
+        $emails = ['a','b', 'c','d','e'];
         foreach($emails as $email ){
             \App\User::create([
-                'name' => 'anuma',
-                'email' => $email,
+                'name' => $email,
                 'password' => bcrypt('password'),
-                'group_gid' => $count++,
             ]);
         }
     }

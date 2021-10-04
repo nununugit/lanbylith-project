@@ -15,13 +15,9 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id')->unsigned();
-            $table->string('name');
-            $table->string('email')->unique();
+            $table->string('name')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-
-            $table->integer('group_gid')->unsigned();
-            $table->foreign('group_gid')->references('gid')->on('groups');
     
             $table->biginteger('ip')->nullable();
 

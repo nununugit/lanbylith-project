@@ -33,14 +33,6 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm　">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    @php
-                $item = DB::table('users')
-                    ->join('groups', 'users.group_gid' , '=' , 'groups.gid')
-                    ->select('users.name','groups.gname')
-                    ->where('users.name','=', Auth::user()->name )
-                    ->first();
-                    @endphp
-                {{ $item -> gname}}
             </a>
 
             <div class='navbar2nd'>
