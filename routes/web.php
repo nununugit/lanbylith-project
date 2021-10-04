@@ -54,3 +54,7 @@ Route::post('/api/sort','sortController@request_sort');
 Route::get('/test/sql','jsoncontroller@sql');
 
 Route::any('/test/ip', 'newsController@test_ip');
+
+
+Route::get('auth/qr_login', 'Auth\\QrLoginController@showQrReader');   // ログインフォーム
+Route::post('auth/qr_login', 'Auth\\QrLoginController@login');          // Ajax通信

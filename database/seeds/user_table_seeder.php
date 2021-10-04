@@ -18,6 +18,7 @@ class user_table_seeder extends Seeder
             \App\User::create([
                 'name' => $email,
                 'password' => bcrypt('password'),
+                'uuid' => (string) \Str::uuid(),
             ]);
         }
     }
