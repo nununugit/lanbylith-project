@@ -47,7 +47,7 @@ class questionController extends Controller
         }else{
         $clearflag = DB::table('ac')->join('users','users.id', '=','ac.user_id')
         ->select('question_qid')
-        ->where('group_gid','=',Auth::user()->group_gid)
+        ->where('user_id','=',Auth::user()->user_id)
         ->get();
         }
         return view('question',['questions'=> $params , 'message' => $msg ,'difficulty'=>$difficulty,'hints'=>$hints]);

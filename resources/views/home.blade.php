@@ -1,8 +1,11 @@
-@extends('layouts.navbar')
+@section('title', 'HOME')
+
+@extends('layouts.app')
 
 @section('content')
 <body>
     <div class = "container">
+        <h2><b>学校のQRコードを探して、問題を答えよう！！！</b></h2>
         <div class="jumbotron mt-4">
         <h2><b>質問箱</b></h2>
       <br>

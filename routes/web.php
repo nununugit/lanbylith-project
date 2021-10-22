@@ -14,27 +14,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect('/members/login');
+    return redirect('/login');
 });
 // 認証機能のroute
-Route::get('members/login', 'Auth\LoginController@showLoginForm')->name('login');
-Route::post('members/login', 'Auth\LoginController@login');
-Route::post('members/logout', 'Auth\LoginController@logout')->name('logout');
-Route::get('members/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
-Route::post('members/register', 'Auth\RegisterController@register');
+Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('/login', 'Auth\LoginController@login');
+Route::post('/logout', 'Auth\LoginController@logout')->name('logout');
+Route::get('/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('/register', 'Auth\RegisterController@register');
 
-Route::get('members/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
-Route::post('members/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
-Route::get('members/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
-Route::post('members/password/reset', 'Auth\ResetPasswordController@reset');
+Route::get('/password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('/password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('/password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
 
 //コントローラのroute
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/home/qanda', 'HomeController@qanda')->name('qanda');
 Route::post('/home','HomeController@post_qanda');
+
 //questionのやつ
 Route::get('/question/{difficulty}', 'questionController@question');
 Route::post('/question/{difficulty}', 'answerController@answer');
+
 //その他のナビバーシリーズ
 Route::get('/rank', 'rankController@rank');
 Route::get('/roulette','rouletteController@roulette');
@@ -44,6 +46,7 @@ Route::get('/sort','sortController@sort');
 // json用のコントローラ
 Route::get('/api/clearflag','jsonController@clearflag');
 Route::get('/api/car','jsonController@car');
+
 //correct answer rate　正答率
 Route::get('/api/ac','jsonController@ac');
 Route::get('/api/news','jsonController@news');
@@ -52,9 +55,8 @@ Route::post('/api/sort','sortController@request_sort');
 
 //testようのコントローラー
 Route::get('/test/sql','jsoncontroller@sql');
-
 Route::any('/test/ip', 'newsController@test_ip');
 
 
-Route::get('auth/qr_login', 'Auth\\QrLoginController@showQrReader');   // ログインフォーム
-Route::post('auth/qr_login', 'Auth\\QrLoginController@login');          // Ajax通信
+Route::get('auth/qr_login', 'Auth\\QrLoginController@showQrReader')->name('qr_login');// ログインフォーム
+Route::post('auth/qr_login', 'Auth\\QrLoginController@login');// Ajax通信
