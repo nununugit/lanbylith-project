@@ -4,12 +4,12 @@ new Vue({
         video: null,
         canvas: null,
         context: null,
-        uuid: '',
+        next_url: '',
         completed: false
     },
     computed: {
-        hasUuid() {
-            return (this.uuid !== '');
+        hasNext_url() {
+            return (this.next_url !== '');
         }
     },
     methods: {
@@ -17,7 +17,7 @@ new Vue({
 
             requestAnimationFrame(this.renderFrame); // 描画を繰り返す
 
-            if (!this.hasUuid && !this.completed) { // まだQRコードが読み込まれていない場合
+            if (!this.hasNext_url && !this.completed) { // まだQRコードが読み込まれていない場合
 
                 const video = this.video;
                 const canvas = this.canvas;
@@ -33,8 +33,8 @@ new Vue({
 
                     if (code) {
 
-                        this.uuid = code.data;
-                        axios.post('/auth/qr_login', { uuid: this.uuid })
+                        this.next_url = code.data;
+                        axios.post('/auth/qr_login', { next_url: this.next_url })
                             .then((response) => {
 
                                 const result = response.data.result;
@@ -52,7 +52,7 @@ new Vue({
                             })
                             .catch((error) => {})
                             .then(() => {
-                                this.uuid = '';
+                                this.next_url = '';
                             });
                     }
                 }

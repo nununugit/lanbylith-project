@@ -29,6 +29,18 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $grouprank = '';
+        // DB::table('gscore')
+        // ->select('groups.gname', 'gscore.gscore')
+        // ->join('groups', 'gscore.group_gid','=','groups.gid')
+        // ->whereIn(DB::raw('(groups.gid, gscore.gscore)'),
+        // function ($query)
+        // {
+        //     $query->select('group_gid', DB::raw('max(gscore)'))
+        //           ->from('gscore')
+        //           ->groupBy('group_gid');
+        // })
+        // ->orderBy('gscore.gscore','desc')->get();
         $hint = '';
         $answer = '';
         return view('home',['hint' => $hint ,'answer' => $answer]);

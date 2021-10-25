@@ -42,7 +42,7 @@ Route::post('/question/{difficulty}', 'answerController@answer');
 
 
 //その他のナビバーシリーズ
-Route::get('/rank', 'rankController@rank');
+Route::get('/ranking', 'rankController@rank')->name('ranking');
 Route::get('/roulette','rouletteController@roulette');
 Route::get('/hint','hintController@hint');
 Route::get('/sort','sortController@sort');
