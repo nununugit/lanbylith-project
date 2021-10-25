@@ -1,5 +1,5 @@
 
-@extends('layouts.navbar')
+@extends('layouts.app')
 
 @section('content')
 <head>
@@ -99,9 +99,6 @@
           </div><!-- /.modal -->
             @endforeach
     </div>
-  <script src="{{ asset('js/app_percent_jquery.js') }}" defer></script>
-  <script src="{{ asset('js/clearflag_jquery.js') }}" defer></script>
-  <link href="{{ asset('css/app3.css') }}" rel="stylesheet">
 
     </body>
 </html>

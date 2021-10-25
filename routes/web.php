@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect('/login');
+    return redirect('/register');
 });
 // 認証機能のroute
 Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -34,8 +34,12 @@ Route::get('/home/qanda', 'HomeController@qanda')->name('qanda');
 Route::post('/home','HomeController@post_qanda');
 
 //questionのやつ
-Route::get('/question/{difficulty}', 'questionController@question');
+Route::get('/question/{random-url}/{difficulty}', 'questionController@question');
+
 Route::post('/question/{difficulty}', 'answerController@answer');
+
+
+
 
 //その他のナビバーシリーズ
 Route::get('/rank', 'rankController@rank');
@@ -43,20 +47,18 @@ Route::get('/roulette','rouletteController@roulette');
 Route::get('/hint','hintController@hint');
 Route::get('/sort','sortController@sort');
 
-// json用のコントローラ
-Route::get('/api/clearflag','jsonController@clearflag');
-Route::get('/api/car','jsonController@car');
-
-//correct answer rate　正答率
+//api系統のコントローラー
+Route::get('/api/clearflag','jsonController@clearflag');    //json用のコントローラ
+Route::get('/api/car','jsonController@car');    //correct answer rate　正答率
 Route::get('/api/ac','jsonController@ac');
 Route::get('/api/news','jsonController@news');
 Route::any('/api/roulette','jsonController@roulette');
 Route::post('/api/sort','sortController@request_sort');
 
-//testようのコントローラー
+//コントローラーtest
 Route::get('/test/sql','jsoncontroller@sql');
 Route::any('/test/ip', 'newsController@test_ip');
 
 
-Route::get('auth/qr_login', 'Auth\\QrLoginController@showQrReader')->name('qr_login');// ログインフォーム
-Route::post('auth/qr_login', 'Auth\\QrLoginController@login');// Ajax通信
+Route::get('auth/qr_login', 'Auth\QrLoginController@showQrReader')->name('qr_login');// ログインフォーム
+Route::post('auth/qr_login', 'Auth\QrLoginController@login');// Ajax通信

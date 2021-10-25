@@ -29,16 +29,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $hint = '';
+        $answer = '';
+        return view('home',['hint' => $hint ,'answer' => $answer]);
     }
     public function qanda(){
         $params = situmon::all();
         return view('qanda',['params' => $params]);
     }
+
     public function post_qanda(Request $request){
         if(($request->situmon)==null){
         return redirect('/home');
-
         }else{
         $situmon = new situmon();
         $situmon -> user_id = Auth::user()->id;
@@ -48,5 +50,7 @@ class HomeController extends Controller
         return redirect('/home');
         }
     }
+
+
 
 }

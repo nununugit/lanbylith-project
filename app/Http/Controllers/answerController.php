@@ -42,10 +42,15 @@ class answerController extends Controller
 
 
         if(DB::table('ac')->join('users','users.id', '=','ac.user_id')->select('ctime')->whereRaw('question_qid = ? and user_id = ?', [ $qid ,$uid ])->exists()){
-            //無限に点数を入れられないために
+            //無限に点数を入れられないためのクエリ
             $msg = '3';
-            return view('question',['questions'=> $params ,'message' => $msg, 'clearflags' => $clearflag ,'difficulty' =>$difficulty,'hints'=>$hints]);
-
+            return view('question',[
+                'questions'=> $params,
+                'message' => $msg,
+                'clearflags' => $clearflag,
+                'difficulty' =>$difficulty,
+                'hints'=>$hints,
+            ]);
         }else{
             if(DB::table('questions')->whereRaw('qid = ? and answer = ?', [$qid,$answer])->exists()){
             //正答のinsert
@@ -57,19 +62,14 @@ class answerController extends Controller
 
                DB::table('ac')->insert($param);
            $msg = '1';
-        //    $taso_flag='true';
+           
            $clearflag = DB::table('ac')
            ->join('users','users.id', '=','ac.user_id')
            ->select('question_qid')
            ->get();
            }else{
-               $taso_flag='false';
-               $msg = '2';
            }
-        // $taso_controller = app()->make('App\Http\Controllers\tasoController');
-        // $user_param = $taso_controller->guzzle_taso($qid,$gid,$taso_flag);
-
-           return view('question',['questions'=> $params ,'message' => $msg, 'clearflags' => $clearflag ,'difficulty' =>$difficulty,'hints'=>$hints]);           
+           return view('question',['questions'=> $params ,'message' => $msg,'difficulty' =>$difficulty,'hints'=>$hints]);           
         }
 
     }

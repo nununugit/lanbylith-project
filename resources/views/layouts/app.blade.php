@@ -78,6 +78,7 @@
             </div>
         </nav>
 
+        <link rel="stylesheet" href="{{ asset('css/lanbylith.css') }}">
         <main class="py-4">
             @yield('content')
         </main>

@@ -18,11 +18,14 @@ class questionController extends Controller
         // return Auth::user()->name;
 
         $msg = '';
-        $hints='';
         $clearflagcnt = '';
 
-        $params =  DB::table('questions')->join('lv','lv.lvid', '=','questions.lv_lvid')
-        ->where('lv.lvname','=',$difficulty) ->oldest('qid')->get();
+        $params =  
+        DB::table('questions')
+        ->join('lv','lv.lvid', '=','questions.lv_lvid')
+        ->where('lv.lvname','=',$difficulty) 
+        ->oldest('qid')
+        ->get();
 
         
         if($params==null){
