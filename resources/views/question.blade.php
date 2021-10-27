@@ -13,7 +13,6 @@
 @unless(empty($message))
 <link href="{{ asset('css/app_circle.css') }}" rel="stylesheet">
 <script src="{{ asset('js/aci_jquery.js') }}" defer></script>
-
     @if(($message=='1'))
         <div class="circle display-none">
         </div>
@@ -32,74 +31,30 @@
     @endif
 @endunless
 
-
-        <div class="row row-cols-1 row-cols-md-4" >
-            @foreach($questions as $question)
-          <div class="col mb-4" >
-            <div class="card percent flagcori{{ $question-> qid }}" data-toggle="modal" data-target="#exampleModal{{  $question -> qid  }}">
-                <div class="card-body">
-                <h5 class="card-title">
-                {{ $difficulty }}
-                </h5>
-              <p class="card-text">{{ $question -> title }}</p>
-                </div>
-
-                <div class="card-footer obi">
-                    <div class="car{{ $question -> qid }}">正答率 0%</div>
-                </div>
-            </div>
-          </div>
-            @endforeach
-        </div>
-
-        @foreach ($questions as $question)
-        <!-- モーダルの設定 -->
-        <div class="modal fade" id="exampleModal{{  $question -> qid  }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">{{ $question -> title }}</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
-                </div>
-                <div class="modal-body">
-                  <p>{!!  nl2br(e($question -> content))  !!}</p>
-            @if ($difficulty=='hard')
-            @php
-            $count =0;    
-            @endphp
-                @foreach ($hints as $hint )
-                    @if(($hint->number)==(($question->qid)-44))
-                    <p>
-                    ヒント：{{$hint->hint}}
-                    </p>
-                    @endif
-                @endforeach        
-            @endif
-                </div>
-              <form action="{{url('/question/'.$difficulty)}}" method="post">
-                <div class="modal-footer">
-                        @csrf
-                        <div class="form-group row">
-                            <input class="form-control" type="text" name="answer" >
-                        </div>
-
-                        <div class="form-group row">
-                            <input class="form-control" type="hidden" name ="qid" value="{{$question -> qid}}">
-                        </div>
-                        <div class = "form-group row">
-                            <input class="btn btn-primary " type="submit" class= "btn btn-primary" value="送信">
-                        </div>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-                </div><!-- /.modal-footer -->
-            </form>
-              </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-          </div><!-- /.modal -->
-            @endforeach
+@foreach ($questions as $question)
+  <h5>{{ $question -> title }}</h5>
+    <div>
+      <p>{!!  nl2br(e($question -> content))  !!}</p>
+    </div>
+<form action="{{url('/question/'.$random_url.'/'.$difficulty)}}" method="post">
+  <div>
+    @csrf
+    <div class="form-group row">
+      <input class="form-control" type="text" name="answer" >
+    </div>
+    
+    <div class="form-group row">
+      <input class="form-control" type="hidden" name ="qid" value="{{$question -> qid}}">
     </div>
 
-    </body>
+    <div class = "form-group row">
+      <input class="btn btn-primary " type="submit" class= "btn btn-primary" value="送信">
+    </div>
+  </div>
+</form>
+@endforeach
+<div>
+</div>
+</body>
 </html>
 @endsection

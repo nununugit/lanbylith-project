@@ -34,9 +34,8 @@ Route::get('/home/qanda', 'HomeController@qanda')->name('qanda');
 Route::post('/home','HomeController@post_qanda');
 
 //questionのやつ
-Route::get('/question/{random-url}/{difficulty}', 'questionController@question');
-
-Route::post('/question/{difficulty}', 'answerController@answer');
+Route::get('/question/{random_url}/{difficulty}', 'questionController@question');
+Route::post('/question/{random_url}/{difficulty}', 'answerController@answer');
 
 
 

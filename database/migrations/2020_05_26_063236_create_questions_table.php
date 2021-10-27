@@ -21,6 +21,7 @@ class CreateQuestionsTable extends Migration
 
             $table->string('title',500);
             $table->string('content',500);
+            $table->string('url',500);
             $table->string('answer');
             $table->timestamps();
         });

@@ -12,7 +12,7 @@ class questionController extends Controller
         $this->middleware('auth');
     }
 
-    public function question($difficulty)
+    public function question($random_url , $difficulty)
     {
         //今追加したよ
         // return Auth::user()->name;
@@ -20,31 +20,18 @@ class questionController extends Controller
         $msg = '';
         $clearflagcnt = '';
 
-        $params =  
+        $questions =  
         DB::table('questions')
         ->join('lv','lv.lvid', '=','questions.lv_lvid')
-        ->where('lv.lvname','=',$difficulty) 
+        ->where('lv.lvname','=',$difficulty)
+        ->where('questions.url','=',$random_url) 
         ->oldest('qid')
         ->get();
 
-        
-        if($params==null){
+        if($questions==null){
         return redirect('/home');
         }
 
-        // $clearflagcnt = DB::table('ac')->join('users','users.id', '=','ac.user_id')
-        //             ->select('question_qid')
-        //             ->where('group_gid','=',Auth::user()->group_gid)->count();
-
-        if($difficulty=='hard'){
-            // $hints = DB::table('roulette')->join('users','users.id', '=','roulette.user_id')
-            // ->join('hints','hints.id','=','roulette.number')
-            // ->distinct()
-            // ->orderBy('roulette.number', 'asc')
-            // ->select('roulette.number' ,'hints.hint')
-            // ->where('roulette.number','<',21)
-            // ->where('group_gid','=',Auth::user()->group_gid)->get();
-        }
         if($clearflagcnt < 1){
             $clearflag = '';
         }else{
@@ -53,6 +40,12 @@ class questionController extends Controller
         ->where('user_id','=',Auth::user()->user_id)
         ->get();
         }
-        return view('question',['questions'=> $params , 'message' => $msg ,'difficulty'=>$difficulty,'hints'=>$hints]);
+
+        return view('question',[
+            'questions'=> $questions , 
+            'message' => $msg ,
+            'difficulty'=>$difficulty,
+            'random_url'=>$random_url
+        ]);
     }    
 }

@@ -16,8 +16,9 @@ class question_table_seeder extends Seeder
            $param = [
             'title'=>'1テスト問題',
             'lv_lvid'=>'1',
-            'content'=>'「Hello_World!」と入力してみよう。',
-            'answer'=> 'CST{Hello_World!}',
+            'content'=>'test2',
+            'answer'=> 'CST{1}',
+            'url'=> 'Q6ZDUrjmNwb4n8Rg',
         ];
 
         DB::table('questions')->insert($param);
@@ -25,12 +26,10 @@ class question_table_seeder extends Seeder
         $param = [
             'title'=>'2テスト問題',
             'lv_lvid'=>'2',
-            'content'=>'講義の中で主に使用したOSを以下の選択肢から1つ選び、番号で答えよ。
-								1.MacOS
-								2.Windows
-								3.UNIX
-								4.Linux',
-            'answer'=> 'CST{3}',
+            'content'=>'test2',
+            'answer'=> 'CST{2}',
+            'url'=> 'pXxS94WbM4eAc4PM',
+            
         ];
 
         DB::table('questions')->insert($param);
@@ -38,9 +37,9 @@ class question_table_seeder extends Seeder
         $param = [
             'title'=>'3.テスト問題',
             'lv_lvid'=>'3',
-            'content'=>'以下の文章の空欄に当てはまる言葉をカタカナで答えよ。なお、二つの空欄には同じ言葉が入る。
-			「同時に複数のユーザが利用できることを「　　　ユーザ」、同時に複数の処理ができることを「　　　タスク」という。」',
-            'answer'=> 'CST{マルチ}',
+            'content'=>'',
+            'answer'=> 'CST{3}',
+            'url'=> 'VKSXcnDBUAa3r8jY',
         ];
 
         DB::table('questions')->insert($param);
@@ -48,8 +47,10 @@ class question_table_seeder extends Seeder
 	$param = [
             'title'=>'4.テスト問題',
             'lv_lvid'=>'4',
-            'content'=>'ログアウトする際に使用するコマンドを小文字のアルファベットで答えよ。',
-            'answer'=> 'CST{exit}',
+            'content'=>'test4',
+            'answer'=> 'CST{4}',
+            'url'=> 'aZPgQnCP4EHWyYuZ',
+
         ];
 
         DB::table('questions')->insert($param);
@@ -57,10 +58,10 @@ class question_table_seeder extends Seeder
 	$param = [
             'title'=>'5.テスト問題',
             'lv_lvid'=>'5',
-            'content'=>'ユーザにログインする際には、ユーザ名とパスワードを打ち込む。しかし、何を打ち込んでも画面には表示されなかった。これはなぜか。以下の選択肢からどちらかを選び、番号で答えよ。
-								1.打ち込む際に他人にパスワードを見られないようにするため
-								2.タイピング能力の向上を図るため',
-            'answer'=> 'CST{1}',
+            'content'=>'test5',
+            'answer'=> 'CST{5}',
+            'url'=> 'CDZ82JCCf3Xtnb4z',
+
         ];
 
         DB::table('questions')->insert($param);
@@ -68,12 +69,10 @@ class question_table_seeder extends Seeder
 	$param = [
             'title'=>'6. テスト問題',
             'lv_lvid'=>'6',
-            'content'=>'ファイルを編集するコマンドを以下の選択肢から選んで番号で答えよ。 
-                        1. comコマンド 
-                        2. nanoコマンド 
-                        3. editコマンド 
-                        4. nonaコマンド ',
-            'answer'=> 'CST{2}',
+            'content'=>'test6',
+            'answer'=> 'CST{6}',
+            'url'=> 'xyZGnw7dZjYYQ7xG',
+
         ];
 
         DB::table('questions')->insert($param);
@@ -81,13 +80,10 @@ class question_table_seeder extends Seeder
 	$param = [
             'title'=>'7.テスト問題',
             'lv_lvid'=>'7',
-            'content'=>'「1lkpq@4a3Z」というパスワードが解読されるまでの時間に最も近いと予想できる時間を以下の選択肢から1つ選び、番号で答えよ。
-			            1. 60年
-			            2. 6年
-			            3. 6ヶ月
-			            4. 6週間
-			            5. 6日',
-            'answer'=> 'CST{2}',
+            'content'=>'test7',
+            'answer'=> 'CST{7}',
+            'url'=> 'SHz4yazMJmnDYhAj',
+
         ];
 
         DB::table('questions')->insert($param);
@@ -95,8 +91,10 @@ class question_table_seeder extends Seeder
 	$param = [
             'title'=>'8.ファイナル問題',
             'lv_lvid'=>'8',
-            'content'=>'パスワードを変更するコマンドを小文字のアルファベットで答えよ。',
-            'answer'=> 'CST{passwd}',
+            'content'=>'test8',
+            'answer'=> 'CST{8}',
+            'url'=> 'g2mHHWUMSZmdNVJe',
+
         ];
 
         DB::table('questions')->insert($param);

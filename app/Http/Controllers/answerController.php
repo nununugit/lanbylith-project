@@ -5,7 +5,6 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
 class answerController extends Controller
 {
@@ -14,43 +13,30 @@ class answerController extends Controller
         $this->middleware('auth');
     }
 
-     public function answer(Request $request,$difficulty)
+     public function answer(Request $request, $random_url, $difficulty,)
     {
         $qid = $request->qid;
         $answer = $request->answer;
+
         $uid = Auth::user()->id;
+        $msg = '';
 
-        $params =  DB::table('questions')->join('lv','lv.lvid', '=','questions.lv_lvid')
-        ->where('lv.lvname','=',$difficulty) ->oldest('qid')->get();
+        $questions =  
+        DB::table('questions')
+        ->join('lv','lv.lvid', '=','questions.lv_lvid')
+        ->where('lv.lvname','=',$difficulty)
+        ->where('questions.url','=',$random_url) 
+        ->oldest('qid')
+        ->get();
         
-        $clearflag = DB::table('ac')->join('users','users.id', '=','ac.user_id')
-                    ->select('question_qid')
-                    ->get();
-        $hints='';
-
-
-        if($difficulty=='hard'){
-            $hints = '';
-            // DB::table('roulette')->join('users','users.id', '=','roulette.user_id')
-            // ->join('hints','hints.id','=','roulette.number')
-            // ->distinct()
-            // ->orderBy('roulette.number', 'asc')
-            // ->select('roulette.number' ,'hints.hint')
-            // ->where('roulette.number','<',21)
-            // ->where('group_gid','=',Auth::user()->group_gid)->get();
-        }
-
-
+        $clearflag = DB::table('ac')
+        ->join('users','users.id', '=','ac.user_id')
+        ->select('question_qid')
+        ->get();
+        
         if(DB::table('ac')->join('users','users.id', '=','ac.user_id')->select('ctime')->whereRaw('question_qid = ? and user_id = ?', [ $qid ,$uid ])->exists()){
             //無限に点数を入れられないためのクエリ
             $msg = '3';
-            return view('question',[
-                'questions'=> $params,
-                'message' => $msg,
-                'clearflags' => $clearflag,
-                'difficulty' =>$difficulty,
-                'hints'=>$hints,
-            ]);
         }else{
             if(DB::table('questions')->whereRaw('qid = ? and answer = ?', [$qid,$answer])->exists()){
             //正答のinsert
@@ -61,16 +47,22 @@ class answerController extends Controller
                ];
 
                DB::table('ac')->insert($param);
+
            $msg = '1';
            
            $clearflag = DB::table('ac')
            ->join('users','users.id', '=','ac.user_id')
            ->select('question_qid')
-           ->get();
-           }else{
-           }
-           return view('question',['questions'=> $params ,'message' => $msg,'difficulty' =>$difficulty,'hints'=>$hints]);           
+           ->get();     
+            }
         }
+        
+        return view('question',[
+            'questions'=> $questions, 
+            'message' => $msg,
+            'difficulty'=>$difficulty,
+            'random_url'=>$random_url
+        ]);
 
     }
 }
