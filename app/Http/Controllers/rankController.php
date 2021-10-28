@@ -13,18 +13,19 @@ class rankController extends Controller
         $this->middleware('auth');
     }
     public function rank(){
-    $grouprank =
-    DB::table('gscore')
-    ->select('groups.gname', 'gscore.gscore')
-    ->join('groups', 'gscore.group_gid','=','groups.gid')
-    ->whereIn(DB::raw('(groups.gid, gscore.gscore)'),
+    $ranking = 
+    DB::table('uscore')
+    ->select('users.name', 'uscore.uscore')
+    ->join('users', 'users.id','=','uscore.user_id')
+    ->whereIn(DB::raw('(uscore.user_id, uscore.uscore)'),
     function ($query)
     {
-        $query->select('group_gid', DB::raw('max(gscore)'))
-              ->from('gscore')
-              ->groupBy('group_gid');
+        $query->select('user_id', DB::raw('max(uscore)'))
+              ->from('uscore')
+              ->groupBy('user_id');
     })
-    ->orderBy('gscore.gscore','desc')->get();
-    return view('rank',['granks' => $grouprank]);
+    ->orderBy('uscore.uscore','desc')->get();
+
+    return view('rank',['params' => $ranking]);
     }
 }

@@ -31,8 +31,38 @@ class HomeController extends Controller
     {
         $grouprank = '';
         $hint = '';
-        $answer = '';
-        return view('home',['hint' => $hint ,'answer' => $answer]);
+        // $answers = Auth::user()->id;
+        $answers = DB::table('ac')
+        ->join('users','users.id', '=','ac.user_id')
+        ->join('questions','ac.question_qid', '=','questions.qid')
+        ->select('questions.title','questions.answer')
+        ->where('user_id','=',Auth::user()->id)
+        ->get();
+
+        $ranking = 
+        DB::table('uscore')
+        ->select('users.name', 'uscore.uscore')
+        ->join('users', 'users.id','=','uscore.user_id')
+        ->whereIn(DB::raw('(uscore.user_id, uscore.uscore)'),
+        function ($query)
+        {
+            $query->select('user_id', DB::raw('max(uscore)'))
+                  ->from('uscore')
+                  ->groupBy('user_id');
+        })
+        ->orderBy('uscore.uscore','desc')->get();
+
+        $hint =
+        DB::table('hints')
+        ->join('ac','ac.question_qid','=','hints.id')
+        ->select('hints.hint')
+        ->where('user_id','=',Auth::user()->id)
+        ->where('ac.question_qid','!=','hints.id')
+        ->get();
+
+        //を除く処理の追加
+
+        return view('home',['hint' => $hint ,'answers' => $answers,'ranking'=>$ranking,'hints'=>$hint]);
     }
     public function qanda(){
         $params = situmon::all();

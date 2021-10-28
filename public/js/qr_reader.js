@@ -32,28 +32,8 @@ new Vue({
                     const code = jsQR(imageData.data, imageData.width, imageData.height);
 
                     if (code) {
-
                         this.next_url = code.data;
-                        axios.post('/auth/qr_login', { next_url: this.next_url })
-                            .then((response) => {
-
-                                const result = response.data.result;
-                                const user = response.data.user;
-
-                                if (result) {
-                                    console.log(user);
-                                    this.completed = true;
-                                    alert('「' + user.name + '」さん、おはようございます！');
-                                    location.href = '/home'; // ここでリダイレクト
-                                } else {
-                                    console.log('ログイン失敗..');
-                                }
-
-                            })
-                            .catch((error) => {})
-                            .then(() => {
-                                this.next_url = '';
-                            });
+                        window.location.href = this.next_url;
                     }
                 }
             }
@@ -70,5 +50,6 @@ new Vue({
                 this.video.play();
                 requestAnimationFrame(this.renderFrame);
             });
-    }
+    },
+
 });

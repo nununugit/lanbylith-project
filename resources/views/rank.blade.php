@@ -2,7 +2,7 @@
 @section('content')
 <link href="{{ asset('css/app6.css') }}" rel="stylesheet">
 <div class="container">
-    <center><h2>RANKING</h2></center>
+    {{-- <center><h2>RANKING</h2></center>
     <div class="my-parts">
         @php
         $counter=0;
@@ -12,9 +12,9 @@
           <th>順位</th>
           <th>チーム名</th>
           <th>得点</th>
-        </tr>
+        </tr> --}}
 
-    @foreach ($granks as $grank)
+    {{-- @foreach ($granks as $grank)
         @php
         $counter++
         @endphp
@@ -24,10 +24,9 @@
         <td>{{ $grank -> gname }}</td>
         <td>{{ $grank -> gscore }}</td>
     </tr>
-    @endforeach
-    </table>
+    @endforeach --}}
+    {{-- </table> --}}
     </div>
-
-
+    {{ $params }}
 </div>
 @endsection

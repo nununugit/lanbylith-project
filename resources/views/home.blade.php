@@ -90,8 +90,28 @@
               </div>
             </div>
     </div>
+      <!-- モーダル -->
+      <div class="modal fade" id="hint" tabindex="-1" role="dialog" aria-labelledby="hintLabel">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="hintLabel"></h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              {{-- @foreach ($hints as $hint)
+              {{ $hint }}                
+              @endforeach --}}
+              {{ $hints }}
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+            </div><!-- /.modal-content -->
+          </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+      </div>
 
-        <!-- モーダルの設定 -->
+        <!-- モーダル -->
         <div class="modal fade" id="questionaire" tabindex="-1" role="dialog" aria-labelledby="questionaireLabel">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -119,12 +139,12 @@
                 </div>
 
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-            </form>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
           </div><!-- /.modal -->
     </div>
-        
+
+    <!-- モーダル -->    
     <div class="modal fade" id="qr-reader" tabindex="-1" role="dialog" aria-labelledby="qr-readerLabel">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -135,24 +155,112 @@
               </button>
             </div>
             <div class="modal-body">
-
-
     <div id="qr_login">
         <div class="text">QRコード読み取り</div>
         <br>
     </div>
-        <canvas id="canvas"></canvas>
+    </div>
+    <canvas id = "canvas"></canvas>
+    <input type="button" value="OFF" onClick="OnOff(this);">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
+        
         <script src="/js/jsQR/dist/jsQR.js"></script>
-        <script src="{{ asset('js/qr_login.js') }}" defer></script>
+        <script src="{{ asset('js/qr_reader.js') }}" defer></script>
+        <script src="{{ asset('js/on_off.js') }}" defer></script>
         <link href="{{ asset('css/qr_login.css') }}" rel="stylesheet">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
-        </form>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
-</div>
     </div>
+  
+     <!-- モーダル -->
+     <div class="modal fade" id="answers" tabindex="-1" role="dialog" aria-labelledby="answersLabel">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="answersLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            @foreach ($answers as $answer)
+                {{ $answer->title }}
+                {{ $answer->answer }}
+            @endforeach
+            
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    </div>
+    
+    <!-- モーダル -->
+    <div class="modal fade" id="caution" tabindex="-1" role="dialog" aria-labelledby="cautionLabel">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="cautionLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            注意事項
+          - 今回使用するパスワードはいつも使っているパスワードは絶対に使わないでください。
+          - クリアする時間はランキングと関係ありません、走らずゆっくりとゲームを進めてください。
+          - お困りの際は1100教室までお越しください。
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    </div>
+
+
+    <!-- モーダル -->
+    <div class="modal fade" id="ranking" tabindex="-1" role="dialog" aria-labelledby="rankingLabel">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="rankingLabel"></h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <link href="{{ asset('css/app6.css') }}" rel="stylesheet">
+            <center><h2>RANKING</h2></center>
+              <div class="my-parts">
+                  @php
+                  $counter=0;
+                  @endphp
+              <table>
+                  <tr>
+                    <th>順位</th>
+                    <th>名前</th>
+                    <th>得点</th>
+                  </tr>
+              @foreach ($ranking as $rank)
+                  @php
+                  $counter++
+                  @endphp
+              <tr>
+                  <td>
+                  {{ $counter }}</td>
+                  <td>{{ $rank -> name }}</td>
+                  <td>{{ $rank -> uscore }}</td>
+              </tr>
+              @endforeach 
+                   
+              </table>
+              </div>   
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+    </div>
+  </div>
 </body>
 @endsection
