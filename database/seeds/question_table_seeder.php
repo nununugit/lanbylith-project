@@ -14,10 +14,10 @@ class question_table_seeder extends Seeder
     {
            //難易度1の問題
            $param = [
-            'title'=>'1　シーザ暗号',
+            'title'=>'1 シーザ暗号',
             'lv_lvid'=>'1',
             'content'=>'以下の暗号文を解け！',
-            'answer'=> 'CST{1}',
+            'answer'=> 'おおいまち',
             'url'=> 'Q6ZDUrjmNwb4n8Rg',
             'filename' => 'question1.png'
         ];
@@ -25,10 +25,10 @@ class question_table_seeder extends Seeder
         DB::table('questions')->insert($param);
 
         $param = [
-            'title'=>'2',
+            'title'=>'2 ポリビュオス暗号',
             'lv_lvid'=>'2',
-            'content'=>'test2',
-            'answer'=> 'CST{2}',
+            'content'=>'以下の暗号文を解け！',
+            'answer'=> 'うらないし',
             'url'=> 'pXxS94WbM4eAc4PM',
             'filename' => 'question2.png'
         ];
@@ -36,10 +36,10 @@ class question_table_seeder extends Seeder
         DB::table('questions')->insert($param);
 
         $param = [
-            'title'=>'3.テスト問題',
+            'title'=>'3 スライドパズル',
             'lv_lvid'=>'3',
-            'content'=>'',
-            'answer'=> 'CST{3}',
+            'content'=>'揃えよ',
+            'answer'=> 'ごまだれ',
             'url'=> 'VKSXcnDBUAa3r8jY',
             'filename' => ''
         ];
@@ -47,10 +47,10 @@ class question_table_seeder extends Seeder
         DB::table('questions')->insert($param);
 
 	$param = [
-            'title'=>'4.テスト問題',
+            'title'=>'4 ルーレット！',
             'lv_lvid'=>'4',
-            'content'=>'test4',
-            'answer'=> 'CST{4}',
+            'content'=>'32が出るまでまわそう！',
+            'answer'=> 'うどん',
             'url'=> 'aZPgQnCP4EHWyYuZ',
             'filename' => ''
 
@@ -59,10 +59,10 @@ class question_table_seeder extends Seeder
         DB::table('questions')->insert($param);
 
 	$param = [
-            'title'=>'5.テスト問題',
+            'title'=>'5 なぞなぞ',
             'lv_lvid'=>'5',
-            'content'=>'test5',
-            'answer'=> 'CST{5}',
+            'content'=>'これはなんだ？',
+            'answer'=> 'かずのこ',
             'url'=> 'CDZ82JCCf3Xtnb4z',
             'filename' => 'question5.png'
 
@@ -71,10 +71,10 @@ class question_table_seeder extends Seeder
         DB::table('questions')->insert($param);
 
 	$param = [
-            'title'=>'6. テスト問題',
+            'title'=>'6 コード暗号',
             'lv_lvid'=>'6',
-            'content'=>'test6',
-            'answer'=> 'CST{6}',
+            'content'=>'以下の暗号文を解け！',
+            'answer'=> 'りんご',
             'url'=> 'xyZGnw7dZjYYQ7xG',
             'filename' => 'question6.png'
 
@@ -83,10 +83,10 @@ class question_table_seeder extends Seeder
         DB::table('questions')->insert($param);
 
 	$param = [
-            'title'=>'7.テスト問題',
+            'title'=>'7 アナグラム',
             'lv_lvid'=>'7',
-            'content'=>'test7',
-            'answer'=> 'CST{7}',
+            'content'=>'以下の暗号文を解け！',
+            'answer'=> 'ゆきだるま',
             'url'=> 'SHz4yazMJmnDYhAj',
             'filename' => 'question7.png'
 
@@ -95,13 +95,12 @@ class question_table_seeder extends Seeder
         DB::table('questions')->insert($param);
 
 	$param = [
-            'title'=>'8.ファイナル問題',
+            'title'=>'8 クロスワード',
             'lv_lvid'=>'8',
             'content'=>'test8',
             'answer'=> 'CST{8}',
             'url'=> 'g2mHHWUMSZmdNVJe',
             'filename' => 'question8.png'
-
         ];
 
         DB::table('questions')->insert($param);

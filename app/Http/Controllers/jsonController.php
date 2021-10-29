@@ -35,17 +35,13 @@ class jsonController extends Controller
 
     public function roulette(request $request){
         $uid = Auth::user()->id;
-        if(DB::table('ac')->whereRaw('user_id = ? AND rouletted =?',[$uid,0])->exists()){
-        DB::table('ac')
-        ->whereRaw('user_id = ? AND rouletted =?',[$uid,0])
-        ->limit(1)
-        ->update(['rouletted' => 1]);
-
+        $ac_flag =DB::table('ac')->whereRaw('user_id = ? AND question_qid =?',[$uid,4])->exists();
+        if($ac_flag == false){
             $param = [
                 'user_id' =>  $uid ,
-                'number'=>$request->number
+                'question_qid'=>4
             ];
-            DB::table('roulette')->insert($param);
+            DB::table('ac')->insert($param);
         }else{
             return $params;
         }

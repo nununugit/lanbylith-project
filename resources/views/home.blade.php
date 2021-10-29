@@ -9,33 +9,33 @@
 
         <div class="row row-cols-2 row-cols-md-2" >
           <div class="col mb-4" >
-            <div class="card" data-toggle="modal" data-target="#hint">
+            <div class="card border-info" data-toggle="modal" data-target="#hint">
                 <div class="card-body">
                   <img class="card-img" src="images/home_hint.png" alt="">
                 </div>
-                <div class="card-footer obi">
+                <div class="card-footer border-info">
                     <div >ヒント</div>
                 </div>
             </div>
           </div>
 
             <div class="col mb-4" >
-              <div class="card" data-toggle="modal" data-target="#qr-reader">
+              <div class="card border-dark" data-toggle="modal" data-target="#qr-reader">
                   <div class="card-body">
                     <img class="card-img" src="images/home_camera.png" alt="">
                   </div>
-                  <div class="card-footer obi">
+                  <div class="card-footer border-dark">
                       <div >QR読み取り</div>
                   </div>
               </div>
             </div>
 
             <div class="col mb-4" >
-              <div class="card" data-toggle="modal" data-target="#answers">
+              <div class="card border-primary" data-toggle="modal" data-target="#answers">
                   <div class="card-body">
-                    <img class="card-img" src="images/home_camera.png" alt="">
+                    <img class="card-img" src="images/home_answer.png" alt="">
                   </div>
-                  <div class="card-footer obi">
+                  <div class="card-footer border-primary">
                       <div >今までの答え</div>
                   </div>
               </div>
@@ -43,11 +43,11 @@
 
 
             <div class="col mb-4" >
-              <div class="card" data-toggle="modal" data-target="#ranking">
-                  <div class="card-body">
+              <div class="card border-warning" data-toggle="modal" data-target="#ranking">
+                  <div class="card-body border-warning">
                     <img class="card-img" src="images/home_ranking.png" alt="">
                   </div>
-                  <div class="card-footer obi">
+                  <div class="card-footer border-warning">
                       <div >順位</div>
                   </div>
               </div>
@@ -55,11 +55,11 @@
 
 
             <div class="col mb-4" >
-              <div class="card" data-toggle="modal" data-target="#questionaire">
+              <div class="card  border-success" data-toggle="modal" data-target="#questionaire">
                   <div class="card-body">
                     <img class="card-img" src="images/home_q.png" alt=""> 
                   </div>
-                  <div class="card-footer obi">
+                  <div class="card-footer border-success">
                       <div >質問箱</div>
                   </div>
               </div>
@@ -67,11 +67,11 @@
 
 
             <div class="col mb-4" >
-              <div class="card" data-toggle="modal" data-target="#caution">
+              <div class="card border-danger" data-toggle="modal" data-target="#caution">
                   <div class="card-body">
                     <img class="card-img" src="images/home_caution.png" alt=""> 
                   </div>
-                    <div class="card-footer obi">
+                    <div class="card-footer obi border-danger">
                       <div>注意事項
                       </div>
                   </div>

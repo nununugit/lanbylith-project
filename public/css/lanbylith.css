@@ -240,7 +240,15 @@ body {
 }
 
 .card-img {
+    width: 100px;
+    position: center;
     border-radius: 5px 5px 0 0;
     max-width: 100%;
     height: auto;
+    text-align: center;
+    margin: 0 auto;
+}
+
+div.card-body {
+    text-align: center;
 }
