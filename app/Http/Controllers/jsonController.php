@@ -35,8 +35,8 @@ class jsonController extends Controller
 
     public function roulette(request $request){
         $uid = Auth::user()->id;
-        $ac_flag =DB::table('ac')->whereRaw('user_id = ? AND question_qid =?',[$uid,4])->exists();
-        if($ac_flag == false){
+        $r_flag =DB::table('ac')->whereRaw('user_id = ? AND question_qid =?',[$uid,4])->exists();
+        if($r_flag == false){
             $param = [
                 'user_id' =>  $uid ,
                 'question_qid'=>4
@@ -46,6 +46,22 @@ class jsonController extends Controller
             return $params;
         }
     }
+
+    public function slide_puzzle(request $request){
+        $uid = Auth::user()->id;
+        $sp_flag =DB::table('ac')->whereRaw('user_id = ? AND question_qid =?',[$uid,3])->exists();
+        if(sp_flag == false){
+            $param = [
+                'user_id' =>  $uid ,
+                'question_qid'=>3
+            ];
+            DB::table('ac')->insert($param);
+        }else{
+            return $params;
+        }
+    }
+
+
     public function sql(request $request){
         $uid = Auth::user()->id;
         if(DB::table('ac')->whereRaw('user_id = ? AND rouletted =?',[$uid,0])->exists()){

@@ -41,23 +41,22 @@ Route::post('/question/{random_url}/{difficulty}', 'answerController@answer');
 
 
 //その他のナビバーシリーズ
-Route::get('/ranking', 'rankController@rank')->name('ranking');
-Route::get('/roulette','rouletteController@roulette');
-Route::get('/hint','hintController@hint');
-Route::get('/sort','sortController@sort');
+// Route::get('/ranking', 'rankController@rank')->name('ranking');
+// Route::get('/roulette','rouletteController@roulette');
+// Route::get('/hint','hintController@hint');
+// Route::get('/sort','sortController@sort');
 
 //api系統のコントローラー
 Route::get('/api/clearflag','jsonController@clearflag');    //json用のコントローラ
-Route::get('/api/car','jsonController@car');    //correct answer rate　正答率
+// Route::get('/api/car','jsonController@car');    //correct answer rate　正答率
 Route::get('/api/ac','jsonController@ac');
-Route::get('/api/news','jsonController@news');
+// Route::get('/api/news','jsonController@news');
 Route::any('/api/roulette','jsonController@roulette');
-Route::post('/api/sort','sortController@request_sort');
+Route::any('/api/slide_puzzle','jsonController@slide_puzzle');
 
 //コントローラーtest
 Route::get('/test/sql','jsoncontroller@sql');
 Route::any('/test/ip', 'newsController@test_ip');
-
 
 Route::get('auth/qr_login', 'Auth\QrLoginController@showQrReader')->name('qr_login');// ログインフォーム
 Route::post('auth/qr_login', 'Auth\QrLoginController@login');// Ajax通信

@@ -3,6 +3,7 @@
 
 @section('content')
 <head>
+    <link rel="stylesheet" href="{{ asset('css/lanbylith.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
 </head>
 <html>
@@ -36,8 +37,7 @@
   @if($question->qid == 3 )
   <div class="roulette">
     <div class="main">
-      
-       <button type="button" class="btn" id="spin"><span class="btn-label">Spin</span></button> 
+       <button type="button" class="btn btn-my" id="spin"><span class="btn-label">Spin</span></button> 
 
        <button type="button" class="btn btn-reset" id="reset"><span class="btn-label">New Game</span></button> 
       <div class="plate" id="plate">
@@ -109,7 +109,17 @@
 <link href="{{ asset('css/roulette.css') }}" rel="stylesheet">
 
   @elseif($question->qid == 4)
-  <p>pp</p>
+  <h5>{{ $question -> title }}</h5>
+  <div>
+    <p>{!!  nl2br(e($question -> content))  !!}</p>
+  </div>
+    <div id="main">
+        <div class="panel" id="js-show-panel">
+        </div>
+    </div>
+<script src="{{ asset('js/slide_puzzle.js') }}" defer></script>
+<link href="{{ asset('css/slide_puzzle.css') }}" rel="stylesheet">
+
   @else
   <h5>{{ $question -> title }}</h5>
     <div>

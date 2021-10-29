@@ -5,7 +5,7 @@
 @section('content')
 <body>
     <div class = "container">
-        {{-- <h2 class="lanbylith-text">学校のQRコードを探して、問題を答えよう！！！</h2> --}}
+        <link rel="stylesheet" href="{{ asset('css/lanbylith.css') }}">
 
         <div class="row row-cols-2 row-cols-md-2" >
           <div class="col mb-4" >
@@ -212,6 +212,13 @@
             </li>
             <li>
               お困りの際は1100教室までお越しください。
+            </li>
+            <li>
+              必ずマスクは着用して、ゲームをお楽しみください。
+            </li>
+
+            <li>
+              左上のlanbylithをタップすると、HOMEに帰ることができます。
             </li>
           </ul>
             </div>

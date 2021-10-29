@@ -25,7 +25,6 @@ $(function() {
         $reset.addClass('disabled').prop('disabled', 'disabled').show();
 
         $('.placeholder').remove();
-        randomNumber = 0;
         setTimeout(function() {
             $mask.text('Please wait');
         }, timer / 2);
