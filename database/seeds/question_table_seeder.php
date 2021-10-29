@@ -37,9 +37,9 @@ class question_table_seeder extends Seeder
         DB::table('questions')->insert($param);
 
         $param = [
-            'title'=>'3 スライドパズル',
+            'title'=>'3 ルーレット',
             'lv_lvid'=>'3',
-            'content'=>'揃えよ',
+            'content'=>'0を出そう！！',
             'answer'=> 'ごまだれ',
             'url'=> 'VKSXcnDBUAa3r8jY',
             'filename' => ''
@@ -48,9 +48,9 @@ class question_table_seeder extends Seeder
         DB::table('questions')->insert($param);
 
 	$param = [
-            'title'=>'4 ルーレット！',
+            'title'=>'4 スライドパズル',
             'lv_lvid'=>'4',
-            'content'=>'32が出るまでまわそう！',
+            'content'=>'スライドパズルを解こう',
             'answer'=> 'うどん',
             'url'=> 'aZPgQnCP4EHWyYuZ',
             'filename' => ''
@@ -96,8 +96,8 @@ class question_table_seeder extends Seeder
 	$param = [
             'title'=>'8 クロスワード',
             'lv_lvid'=>'8',
-            'content'=>'test8',
-            'answer'=> 'CST{8}',
+            'content'=>'今までの答えを全て合わせよう！！クロスワードになっているぞ',
+            'answer'=> 'おうごんのりゅう',
             'url'=> 'g2mHHWUMSZmdNVJe',
             'filename' => 'question8.png'
         ];

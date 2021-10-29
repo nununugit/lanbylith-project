@@ -35,7 +35,7 @@
                   <div class="card-body">
                     <img class="card-img" src="images/home_answer.png" alt="">
                   </div>
-                  <div class="card-footer border-primary">
+                  <div class="card-footer border-dark">
                       <div >今までの答え</div>
                   </div>
               </div>
