@@ -60,7 +60,7 @@ class lv_table_seeder extends Seeder
 
         $param = [
             'lvname' => 'final',
-            'score' => '100'
+            'score' => '8'
         ];
         DB::table('lv')->insert($param);
     }

@@ -1,41 +1,35 @@
-div .display-none{
+div .display-none {
     display: none;
 }
-div .circle{
+
+div .circle {
     position: absolute;
     display: inline-block;
-    width: 600px;
-    height: 600px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
-    text-align:center;
+    text-align: center;
     line-height: 80px;
     border-radius: 50%;
     border: solid 20px red;
     text-align: center;
-
     top: 50%;
     left: 50%;
-    -webkit-transform : translate(-50%,-50%);
-    transform : translate(-50%,-50%);
-
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     overflow: hidden;
-
     z-index: 2;
 }
-div .cross{
 
+div .cross {
     position: absolute;
     display: inline-block;
-    color:blue;
-
+    color: blue;
     top: 50%;
     left: 50%;
-    -webkit-transform : translate(-50%,-50%);
-    transform : translate(-50%,-50%);
-
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     font-size: 600px;
-
     overflow: hidden;
-
     z-index: 2;
 }

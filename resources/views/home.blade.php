@@ -5,15 +5,13 @@
 @section('content')
 <body>
     <div class = "container">
-        <h2 class="lanbylith-text">学校のQRコードを探して、問題を答えよう！！！</h2>
+        {{-- <h2 class="lanbylith-text">学校のQRコードを探して、問題を答えよう！！！</h2> --}}
 
         <div class="row row-cols-2 row-cols-md-2" >
           <div class="col mb-4" >
             <div class="card" data-toggle="modal" data-target="#hint">
                 <div class="card-body">
-                <h5 class="card-title">
-                </h5>
-              <p class="card-text"></p>
+                  <img class="card-img" src="images/home_hint.png" alt="">
                 </div>
                 <div class="card-footer obi">
                     <div >ヒント</div>
@@ -24,9 +22,7 @@
             <div class="col mb-4" >
               <div class="card" data-toggle="modal" data-target="#qr-reader">
                   <div class="card-body">
-                  <h5 class="card-title">
-                  </h5>
-                <p class="card-text"></p>
+                    <img class="card-img" src="images/home_camera.png" alt="">
                   </div>
                   <div class="card-footer obi">
                       <div >QR読み取り</div>
@@ -37,9 +33,7 @@
             <div class="col mb-4" >
               <div class="card" data-toggle="modal" data-target="#answers">
                   <div class="card-body">
-                  <h5 class="card-title">
-                  </h5>
-                <p class="card-text"></p>
+                    <img class="card-img" src="images/home_camera.png" alt="">
                   </div>
                   <div class="card-footer obi">
                       <div >今までの答え</div>
@@ -51,9 +45,7 @@
             <div class="col mb-4" >
               <div class="card" data-toggle="modal" data-target="#ranking">
                   <div class="card-body">
-                  <h5 class="card-title">
-                  </h5>
-                <p class="card-text"></p>
+                    <img class="card-img" src="images/home_ranking.png" alt="">
                   </div>
                   <div class="card-footer obi">
                       <div >順位</div>
@@ -65,9 +57,7 @@
             <div class="col mb-4" >
               <div class="card" data-toggle="modal" data-target="#questionaire">
                   <div class="card-body">
-                  <h5 class="card-title">
-                  </h5>
-                <p class="card-text"></p>
+                    <img class="card-img" src="images/home_q.png" alt=""> 
                   </div>
                   <div class="card-footer obi">
                       <div >質問箱</div>
@@ -79,12 +69,10 @@
             <div class="col mb-4" >
               <div class="card" data-toggle="modal" data-target="#caution">
                   <div class="card-body">
-                  <h5 class="card-title">
-                  </h5>
-                <p class="card-text"></p>
+                    <img class="card-img" src="images/home_caution.png" alt=""> 
                   </div>
-                  <div class="card-footer obi">
-                      <div >注意事項
+                    <div class="card-footer obi">
+                      <div>注意事項
                       </div>
                   </div>
               </div>
@@ -95,17 +83,19 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="hintLabel"></h5>
+              <h5 class="modal-title" id="hintLabel">ヒント</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-              {{-- @foreach ($hints as $hint)
-              {{ $hint }}                
-              @endforeach --}}
-              {{ $hints }}
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+              <div class="box24">
+                <p>
+                  Next Lanbylith's Hint!!<br>
+                  {{ $hints ->hint }} 
+                </p>
+            </div>             
+  
             </div><!-- /.modal-content -->
           </div><!-- /.modal-dialog -->
         </div><!-- /.modal -->
@@ -116,13 +106,13 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="questionaireLabel"></h5>
+                  <h5 class="modal-title" id="questionaireLabel">質問</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                    <div class="jumbotron mt-4">
+                    <div class="jumbotron">
                         <h2><b>質問箱</b></h2>
                         <br>
                         <form action="/home" method="post">
@@ -138,7 +128,7 @@
                     </div>
                 </div>
 
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+      
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
           </div><!-- /.modal -->
@@ -149,27 +139,25 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="qr-readerLabel"></h5>
+              <h5 class="modal-title" id="qr-readerLabel">QRコード読み取り</h5>
               <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-    <div id="qr_login">
-        <div class="text">QRコード読み取り</div>
-        <br>
-    </div>
-    </div>
-    <canvas id = "canvas"></canvas>
-    <input type="button" value="OFF" onClick="OnOff(this);">
+            <div id="qr_login">
+                <canvas id = "canvas"></canvas>
+            </div>
+            </div>
+            <!--ここに書き込み-->
+
+        <script src="https://cdn.jsdelivr.net/npm/vue-js-toggle-button@1.3.2/dist/index.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.10/dist/vue.min.js"></script>
-        
         <script src="/js/jsQR/dist/jsQR.js"></script>
         <script src="{{ asset('js/qr_reader.js') }}" defer></script>
         <script src="{{ asset('js/on_off.js') }}" defer></script>
         <link href="{{ asset('css/qr_login.css') }}" rel="stylesheet">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
@@ -180,18 +168,22 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="answersLabel"></h5>
+            <h5 class="modal-title" id="answersLabel">いままでの問題と答え</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
+            <p>問題と答え</p>
+            <div class="box17">
             @foreach ($answers as $answer)
-                {{ $answer->title }}
-                {{ $answer->answer }}
-            @endforeach
-            
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+              <p>
+                {{ $answer->title }}:{{ $answer->answer }}
+              </p>
+              @endforeach
+          </div>
+                
+
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
@@ -202,17 +194,28 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="cautionLabel"></h5>
+            <h5 class="modal-title" id="cautionLabel">注意事項</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="閉じる">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            注意事項
-          - 今回使用するパスワードはいつも使っているパスワードは絶対に使わないでください。
-          - クリアする時間はランキングと関係ありません、走らずゆっくりとゲームを進めてください。
-          - お困りの際は1100教室までお越しください。
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+            <div class="box9">
+              注意事項
+              
+              <ul>
+            <li>
+              今回使用するパスワードはいつも使っているパスワードは絶対に使わないでください。
+            </li>
+            <li>
+              クリアする時間はランキングと関係ありません、走らずゆっくりとゲームを進めてください。
+            </li>
+            <li>
+              お困りの際は1100教室までお越しください。
+            </li>
+          </ul>
+            </div>
+
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
@@ -256,7 +259,7 @@
                    
               </table>
               </div>   
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">閉じる</button>
+
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->

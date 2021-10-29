@@ -52,16 +52,20 @@ class HomeController extends Controller
         })
         ->orderBy('uscore.uscore','desc')->get();
 
+        $ac_qid =
+        DB::table('ac')
+            ->select('question_qid')
+            ->where('user_id','=',Auth::user()->id)
+            ->pluck('question_qid');
+
         $hint =
         DB::table('hints')
-        ->join('ac','ac.question_qid','=','hints.id')
-        ->select('hints.hint')
-        ->where('user_id','=',Auth::user()->id)
-        ->where('ac.question_qid','!=','hints.id')
-        ->get();
+        ->select('hint')
+        ->whereNotIn('id' , $ac_qid)
+        ->first();
 
         //を除く処理の追加
-
+        // dd($hint);
         return view('home',['hint' => $hint ,'answers' => $answers,'ranking'=>$ranking,'hints'=>$hint]);
     }
     public function qanda(){

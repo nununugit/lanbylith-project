@@ -5,7 +5,8 @@ new Vue({
         canvas: null,
         context: null,
         next_url: '',
-        completed: false
+        completed: false,
+        myDataVariable: ''
     },
     computed: {
         hasNext_url() {

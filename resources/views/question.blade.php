@@ -9,6 +9,7 @@
 <body>
 
 <div class="container">
+  <link href="{{ asset('css/question.css') }}" rel="stylesheet">
 
 @unless(empty($message))
 <link href="{{ asset('css/app_circle.css') }}" rel="stylesheet">
@@ -36,24 +37,33 @@
     <div>
       <p>{!!  nl2br(e($question -> content))  !!}</p>
     </div>
-<form action="{{url('/question/'.$random_url.'/'.$difficulty)}}" method="post">
-  <div>
-    @csrf
-    <div class="form-group row">
-      <input class="form-control" type="text" name="answer" >
-    </div>
-    
-    <div class="form-group row">
-      <input class="form-control" type="hidden" name ="qid" value="{{$question -> qid}}">
+
+    <div>
+      <img src="{{ asset('images/'.$question->filename)}}">
     </div>
 
-    <div class = "form-group row">
-      <input class="btn btn-primary " type="submit" class= "btn btn-primary" value="送信">
+    <div>
+      <p class="Form-Item-Label isMsg">回答</p>
+
+      <form action="{{url('/question/'.$random_url.'/'.$difficulty)}}" method="post">
+        <div>
+          @csrf
+          <div class="form-group row">
+            <input class="form-control Form-Item-Input" type="text" name="answer" >
+          </div>
+          
+          <div class="form-group row">
+            <input class="form-control" type="hidden" name ="qid" value="{{$question -> qid}}">
+          </div>
+      
+          <div class = "form-group row">
+            <input class="btn btn-primary Form-Btn " type="submit" class= "btn btn-primary" value="送信する">
+          </div>
+
+        </div>
+      </form>
     </div>
-  </div>
-</form>
 @endforeach
-<div>
 </div>
 </body>
 </html>

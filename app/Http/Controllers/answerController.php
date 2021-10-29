@@ -39,22 +39,25 @@ class answerController extends Controller
             $msg = '3';
         }else{
             if(DB::table('questions')->whereRaw('qid = ? and answer = ?', [$qid,$answer])->exists()){
-            //正答のinsert
+                //正答のinsert
                 $param = [
                    'user_id' =>  $uid ,
                    'question_qid' => $qid,
                    'ctime'=>Carbon::now()
-               ];
+                ];
 
-               DB::table('ac')->insert($param);
+                DB::table('ac')->insert($param);
 
-           $msg = '1';
+                $msg = '1';
            
-           $clearflag = DB::table('ac')
-           ->join('users','users.id', '=','ac.user_id')
-           ->select('question_qid')
-           ->get();     
+                $clearflag = DB::table('ac')
+                ->join('users','users.id', '=','ac.user_id')
+                ->select('question_qid')
+                ->get();     
+            }else{
+                $msg = '2';
             }
+
         }
         
         return view('question',[
