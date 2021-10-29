@@ -66,7 +66,7 @@ class question_table_seeder extends Seeder
         'content'=>'以下の暗号文を解け！',
         'answer'=> 'おおいまち',
         'url'=> 'Q6ZDUrjmNwb4n8Rg',
-        'filename' => 'question1.png'
+        'filename' => 'question5.png'
         ];
 
         DB::table('questions')->insert($param);

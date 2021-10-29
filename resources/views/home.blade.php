@@ -5,7 +5,7 @@
 @section('content')
 <body>
     <div class = "container">
-        <link rel="stylesheet" href="{{ asset('css/lanbylith.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/lanbylith.css') }}"/>
 
         <div class="row row-cols-2 row-cols-md-2" >
           <div class="col mb-4" >
@@ -19,7 +19,7 @@
             </div>
           </div>
 
-            <div class="col mb-4" >
+            {{-- <div class="col mb-4" >
               <div class="card border-dark" data-toggle="modal" data-target="#qr-reader">
                   <div class="card-body">
                     <img class="card-img" src="images/home_camera.png" alt="">
@@ -28,10 +28,10 @@
                       <div >QR読み取り</div>
                   </div>
               </div>
-            </div>
+            </div> --}}
 
             <div class="col mb-4" >
-              <div class="card border-primary" data-toggle="modal" data-target="#answers">
+              <div class="card border-dark" data-toggle="modal" data-target="#answers">
                   <div class="card-body">
                     <img class="card-img" src="images/home_answer.png" alt="">
                   </div>
@@ -134,7 +134,7 @@
           </div><!-- /.modal -->
     </div>
 
-    <!-- モーダル -->    
+    {{-- <!-- モーダル -->    
     <div class="modal fade" id="qr-reader" tabindex="-1" role="dialog" aria-labelledby="qr-readerLabel">
         <div class="modal-dialog">
           <div class="modal-content">
@@ -161,7 +161,7 @@
           </div><!-- /.modal-content -->
         </div><!-- /.modal-dialog -->
       </div><!-- /.modal -->
-    </div>
+    </div> --}}
   
      <!-- モーダル -->
      <div class="modal fade" id="answers" tabindex="-1" role="dialog" aria-labelledby="answersLabel">
