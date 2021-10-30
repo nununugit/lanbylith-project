@@ -55,8 +55,8 @@ Route::any('/api/roulette','jsonController@roulette');
 Route::any('/api/slide_puzzle','jsonController@slide_puzzle');
 
 //コントローラーtest
-Route::get('/test/sql','jsoncontroller@sql');
-Route::any('/test/ip', 'newsController@test_ip');
+// Route::get('/test/sql','jsoncontroller@sql');
+// Route::any('/test/ip', 'newsController@test_ip');
 
-Route::get('auth/qr_login', 'Auth\QrLoginController@showQrReader')->name('qr_login');// ログインフォーム
-Route::post('auth/qr_login', 'Auth\QrLoginController@login');// Ajax通信
+// Route::get('auth/qr_login', 'Auth\QrLoginController@showQrReader')->name('qr_login');// ログインフォーム
+// Route::post('auth/qr_login', 'Auth\QrLoginController@login');// Ajax通信
